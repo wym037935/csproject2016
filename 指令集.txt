@@ -1,7 +1,7 @@
-Âß¼­£ºand or xor nor andi xori lui ori
-ÒÆÎ»£ºsll srl sra sllv srlv srav
-ÒÆ¶¯£ºmovn movz
-ËãÊõ:addu subu slt sltu addi addiu sltiu
-×ªÒÆ£ºjr jalr j jal beq b bgtz blez bne bltz bgez
-¼ÓÔØ´¢´æ£ºlw sw
-¿ÕÖ¸Áî£ºnop
+é€»è¾‘ï¼šand or xor nor andi xori lui ori
+ç§»ä½ï¼šsll srl sra sllv srlv srav
+ç§»åŠ¨ï¼šmovn movz
+ç®—æœ¯:addu subu slt sltu addiu slti sltiu
+è½¬ç§»ï¼šjr jalr j jal beq b bgtz blez bne bltz bgez
+åŠ è½½å‚¨å­˜ï¼šlw sw
+ç©ºæŒ‡ä»¤ï¼šnop
