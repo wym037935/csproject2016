@@ -1,7 +1,7 @@
-逻辑：and or xor nor andi xori lui ori
+﻿逻辑：and or xor nor andi xori lui ori
 移位：sll srl sra sllv srlv srav
 移动：movn movz
 算术:addu subu slt sltu addiu slti sltiu
-转移：jr jalr j jal beq b bgtz blez bne bltz bgez
+转移：jr jalr j jal beq bgtz blez bne bltz bgez
 加载储存：lw sw
 空指令：nop
