@@ -1,0 +1,69 @@
+\documentclass[a4paper,UTF8,fntef]{ctexart}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{arydshln,multirow}
+\makeatletter %使\section中的内容左对齐
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+  {1.5\baselineskip}{0.5\baselineskip}{\bf\leftline}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\makeatother
+\begin{document}
+\title{\Large 指令对比}
+\author{计33~ ~伍一鸣~ ~2012011347\\计33~ ~杜华峰~ ~2013011354\\计33~ ~郭栋~ ~2013011334}
+\maketitle
+\tableofcontents
+\newpage
+\section{与16位指令对比}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		16位指令 & 32位对应指令 \\
+		\hline
+		ADDIU &\multirow{3}{*}{ADDIU} \\	
+		\cline{1-1}{ADDIU3} & \\	
+		\cline{1-1}{ADDSP} & \\
+		\hline
+		ADDU & ADDU\\
+		\hline
+		AND & AND\\
+		\hline
+		B & BEQ \\
+		\hline
+		BEQZ & XOR+BEQ \\
+		\hline
+		BNEZ & XOR+BNE \\
+		\hline
+		BTEQZ & XOR+BEQ \\
+		\hline
+		CMP & SLT+ADDU \\
+		\hline
+		JR & JR \\
+		\hline
+		LI & XOR+ADDIU\\
+		\hline
+		LW & \multirow{2}{*}{LW} \\	
+		\cline{1-1}{LW$\underline{\hbox to 2mm{}}$SP} & \\
+		\hline
+		MFIH & \multirow{4}{*}{XOR+ADDU} \\
+		\cline{1-1}{MFPC} & \\
+		\cline{1-1}{MTIH} & \\
+		\cline{1-1}{MTSP} & \\
+		NOP	& NOP \\
+		\hline
+		OR & OR \\
+		\hline
+		SLL & SLL \\
+		\hline
+		SRA & SRA \\
+		\hline		
+		SUBU & SUBU \\
+		\hline	
+		SW & \multirow{2}{*}{SW} \\	
+		\cline{1-1}{SW$\underline{\hbox to 2mm{}}$SP} & \\
+		\hline
+		\end{tabular}
+	\end{table}
+\end{document}
