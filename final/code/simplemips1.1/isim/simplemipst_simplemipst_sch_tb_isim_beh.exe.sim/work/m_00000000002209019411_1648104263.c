@@ -1213,7 +1213,7 @@ LAB2:    xsi_set_current_line(83, ng0);
     *((unsigned int *)t4) = (t12 & 67108863U);
     t13 = *((unsigned int *)t5);
     *((unsigned int *)t5) = (t13 & 67108863U);
-    t15 = (t0 + 2236U);
+    t15 = (t0 + 948U);
     t16 = *((char **)t15);
     memset(t14, 0, 8);
     t15 = (t14 + 4);

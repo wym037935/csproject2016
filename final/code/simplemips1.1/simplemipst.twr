@@ -1,0 +1,455 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml simplemipst.twx simplemipst.ncd -o simplemipst.twr
+simplemipst.pcf -ucf simplemipst.ucf
+
+Design file:              simplemipst.ncd
+Physical constraint file: simplemipst.pcf
+Device,package,speed:     xc6slx100,fgg676,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk_i
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+XLXN_244    |    7.087(R)|      SLOW  |   -3.733(R)|      FAST  |XLXN_240          |   0.000|
+XLXN_254<0> |    5.671(F)|      SLOW  |   -2.976(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<1> |    6.577(F)|      SLOW  |   -3.490(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<2> |    6.684(F)|      SLOW  |   -3.533(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<3> |    7.448(F)|      SLOW  |   -3.898(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<4> |    7.124(F)|      SLOW  |   -3.717(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<5> |    5.243(F)|      SLOW  |   -2.710(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<6> |    6.635(F)|      SLOW  |   -3.408(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<7> |    7.374(F)|      SLOW  |   -3.852(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<8> |    5.862(F)|      SLOW  |   -3.022(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<9> |    5.346(F)|      SLOW  |   -2.743(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<10>|    5.605(F)|      SLOW  |   -2.875(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<11>|    7.045(F)|      SLOW  |   -3.686(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<12>|    6.797(F)|      SLOW  |   -3.476(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<13>|    6.197(F)|      SLOW  |   -3.239(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<14>|    6.034(F)|      SLOW  |   -3.208(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<15>|    6.382(F)|      SLOW  |   -3.424(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<16>|    6.177(F)|      SLOW  |   -3.186(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<17>|    6.951(F)|      SLOW  |   -3.558(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<18>|    6.264(F)|      SLOW  |   -3.236(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<19>|    6.112(F)|      SLOW  |   -3.228(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<20>|    5.423(F)|      SLOW  |   -2.756(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<21>|    5.500(F)|      SLOW  |   -2.802(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<22>|    6.658(F)|      SLOW  |   -3.493(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<23>|    6.537(F)|      SLOW  |   -3.345(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<24>|    8.098(F)|      SLOW  |   -4.355(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<25>|    8.384(F)|      SLOW  |   -4.491(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<26>|    7.848(F)|      SLOW  |   -4.133(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<27>|    7.079(F)|      SLOW  |   -3.706(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<28>|    7.512(F)|      SLOW  |   -3.873(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<29>|    7.563(F)|      SLOW  |   -3.976(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<30>|    6.478(F)|      SLOW  |   -3.369(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_254<31>|    5.803(F)|      SLOW  |   -2.987(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<0> |    9.161(F)|      SLOW  |   -4.998(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<1> |    8.879(F)|      SLOW  |   -4.744(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<2> |    9.310(F)|      SLOW  |   -4.985(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<3> |    8.428(F)|      SLOW  |   -4.503(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<4> |    9.300(F)|      SLOW  |   -5.036(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<5> |    8.378(F)|      SLOW  |   -4.491(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<6> |    8.954(F)|      SLOW  |   -4.824(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<7> |    8.313(F)|      SLOW  |   -4.367(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<8> |    4.199(F)|      SLOW  |   -1.971(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<9> |    4.107(F)|      SLOW  |   -1.938(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<10>|    5.664(F)|      SLOW  |   -2.958(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<11>|    7.481(F)|      SLOW  |   -3.986(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<12>|    6.513(F)|      SLOW  |   -3.357(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<13>|    5.783(F)|      SLOW  |   -3.008(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<14>|    4.811(F)|      SLOW  |   -2.429(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<15>|    4.333(F)|      SLOW  |   -2.110(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<16>|    8.288(F)|      SLOW  |   -4.442(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<17>|    9.348(F)|      SLOW  |   -4.953(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<18>|    5.947(F)|      SLOW  |   -3.159(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<19>|    6.444(F)|      SLOW  |   -3.416(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<20>|    6.749(F)|      SLOW  |   -3.554(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<21>|    5.681(F)|      SLOW  |   -3.073(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<22>|    7.237(F)|      SLOW  |   -3.883(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<23>|    7.596(F)|      SLOW  |   -4.110(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<24>|    8.638(F)|      SLOW  |   -4.627(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<25>|    8.294(F)|      SLOW  |   -4.447(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<26>|    7.816(F)|      SLOW  |   -4.034(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<27>|    7.050(F)|      SLOW  |   -3.770(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<28>|    7.657(F)|      SLOW  |   -4.019(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<29>|    8.484(F)|      SLOW  |   -4.468(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<30>|    7.096(F)|      SLOW  |   -3.755(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_255<31>|    4.724(F)|      SLOW  |   -2.336(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_257    |    6.923(R)|      SLOW  |   -2.909(R)|      FAST  |XLXN_242          |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk_i to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+XLXN_243    |        12.713(R)|      SLOW  |         6.257(R)|      FAST  |XLXN_240          |   0.000|
+XLXN_245    |        10.507(F)|      SLOW  |         5.517(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.722(F)|      SLOW  |         6.904(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_246    |        10.748(F)|      SLOW  |         5.659(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.086(F)|      SLOW  |         7.094(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_247    |        11.513(F)|      SLOW  |         5.475(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_248    |         8.812(F)|      SLOW  |         4.644(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.027(F)|      SLOW  |         6.031(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_249    |        12.189(F)|      SLOW  |         6.646(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.527(F)|      SLOW  |         8.081(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_250    |        10.926(F)|      SLOW  |         5.328(F)|      FAST  |XLXN_239          |   0.000|
+XLXN_252<0> |        11.952(F)|      SLOW  |         6.470(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.231(F)|      SLOW  |         7.453(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<1> |        12.215(F)|      SLOW  |         6.323(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.740(F)|      SLOW  |         5.824(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<2> |        11.984(F)|      SLOW  |         5.910(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.747(F)|      SLOW  |         6.402(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<3> |        11.999(F)|      SLOW  |         6.196(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.806(F)|      SLOW  |         7.209(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<4> |        11.693(F)|      SLOW  |         6.231(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.702(F)|      SLOW  |         7.675(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<5> |         9.955(F)|      SLOW  |         4.821(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.247(F)|      SLOW  |         6.017(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<6> |        11.508(F)|      SLOW  |         5.572(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.031(F)|      SLOW  |         7.146(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<7> |        10.307(F)|      SLOW  |         4.840(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.277(F)|      SLOW  |         6.111(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<8> |        10.302(F)|      SLOW  |         5.342(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.758(F)|      SLOW  |         6.624(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<9> |        10.749(F)|      SLOW  |         5.410(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.808(F)|      SLOW  |         6.452(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<10>|        11.289(F)|      SLOW  |         5.626(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.785(F)|      SLOW  |         6.500(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<11>|        11.085(F)|      SLOW  |         5.244(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.275(F)|      SLOW  |         6.090(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<12>|        11.418(F)|      SLOW  |         5.564(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.566(F)|      SLOW  |         6.250(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<13>|         9.511(F)|      SLOW  |         4.395(F)|      FAST  |XLXN_239          |   0.000|
+            |         9.929(F)|      SLOW  |         5.354(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<14>|        11.921(F)|      SLOW  |         5.694(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.429(F)|      SLOW  |         6.785(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<15>|         9.764(F)|      SLOW  |         5.042(F)|      FAST  |XLXN_239          |   0.000|
+            |         9.182(F)|      SLOW  |         5.013(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<16>|         9.902(F)|      SLOW  |         5.408(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.197(F)|      SLOW  |         5.754(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<17>|        12.669(F)|      SLOW  |         6.177(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.253(F)|      SLOW  |         7.534(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<18>|        10.127(F)|      SLOW  |         5.395(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.758(F)|      SLOW  |         7.567(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_252<19>|        12.745(F)|      SLOW  |         6.249(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.722(F)|      SLOW  |         6.357(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<0> |        11.798(F)|      SLOW  |         6.370(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.077(F)|      SLOW  |         7.353(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<1> |        10.660(F)|      SLOW  |         5.410(F)|      FAST  |XLXN_239          |   0.000|
+            |         9.185(F)|      SLOW  |         4.911(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<2> |        11.790(F)|      SLOW  |         5.763(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.553(F)|      SLOW  |         6.255(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<3> |        10.628(F)|      SLOW  |         5.355(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.435(F)|      SLOW  |         6.368(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<4> |         9.278(F)|      SLOW  |         4.944(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.287(F)|      SLOW  |         6.388(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<5> |         8.511(F)|      SLOW  |         3.992(F)|      FAST  |XLXN_239          |   0.000|
+            |         9.803(F)|      SLOW  |         5.188(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<6> |         8.786(F)|      SLOW  |         3.979(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.309(F)|      SLOW  |         5.553(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<7> |        11.054(F)|      SLOW  |         5.364(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.024(F)|      SLOW  |         6.635(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<8> |        10.710(F)|      SLOW  |         5.525(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.166(F)|      SLOW  |         6.807(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<9> |        10.437(F)|      SLOW  |         5.207(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.496(F)|      SLOW  |         6.249(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<10>|        11.284(F)|      SLOW  |         5.706(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.780(F)|      SLOW  |         6.580(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<11>|        10.397(F)|      SLOW  |         4.862(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.587(F)|      SLOW  |         5.708(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<12>|        10.814(F)|      SLOW  |         5.239(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.962(F)|      SLOW  |         5.925(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<13>|        10.921(F)|      SLOW  |         5.151(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.339(F)|      SLOW  |         6.110(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<14>|        11.147(F)|      SLOW  |         5.253(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.655(F)|      SLOW  |         6.344(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<15>|         9.210(F)|      SLOW  |         4.631(F)|      FAST  |XLXN_239          |   0.000|
+            |         8.628(F)|      SLOW  |         4.602(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<16>|        10.510(F)|      SLOW  |         5.706(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.805(F)|      SLOW  |         6.052(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<17>|         9.722(F)|      SLOW  |         4.421(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.306(F)|      SLOW  |         5.778(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<18>|         9.254(F)|      SLOW  |         4.779(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.885(F)|      SLOW  |         6.951(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_253<19>|        11.359(F)|      SLOW  |         5.488(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.336(F)|      SLOW  |         5.596(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<0> |        10.983(F)|      SLOW  |         4.713(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.622(F)|      SLOW  |         6.961(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<1> |        14.512(F)|      SLOW  |         5.593(F)|      FAST  |XLXN_239          |   0.000|
+            |        16.151(F)|      SLOW  |         8.884(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<2> |        13.687(F)|      SLOW  |         5.302(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.326(F)|      SLOW  |         8.433(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<3> |        14.101(F)|      SLOW  |         5.395(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.740(F)|      SLOW  |         8.660(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<4> |        14.905(F)|      SLOW  |         5.680(F)|      FAST  |XLXN_239          |   0.000|
+            |        16.547(F)|      SLOW  |         9.093(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<5> |        11.424(F)|      SLOW  |         4.417(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.066(F)|      SLOW  |         7.196(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<6> |         9.387(F)|      SLOW  |         4.907(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.029(F)|      SLOW  |         6.089(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<7> |        14.098(F)|      SLOW  |         5.486(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.740(F)|      SLOW  |         8.660(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<8> |        11.560(F)|      SLOW  |         5.887(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.205(F)|      SLOW  |         7.401(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<9> |        10.963(F)|      SLOW  |         5.283(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.608(F)|      SLOW  |         7.076(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<10>|        11.244(F)|      SLOW  |         5.149(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.889(F)|      SLOW  |         7.232(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<11>|        10.445(F)|      SLOW  |         4.738(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.090(F)|      SLOW  |         6.666(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<12>|        10.443(F)|      SLOW  |         5.340(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.090(F)|      SLOW  |         6.666(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<13>|        12.700(F)|      SLOW  |         6.877(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.347(F)|      SLOW  |         8.107(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<14>|        12.700(F)|      SLOW  |         4.217(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.347(F)|      SLOW  |         8.107(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<15>|        12.460(F)|      SLOW  |         5.455(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.107(F)|      SLOW  |         7.973(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<16>|         9.789(F)|      SLOW  |         5.143(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.437(F)|      SLOW  |         6.325(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<17>|         9.789(F)|      SLOW  |         5.143(F)|      FAST  |XLXN_239          |   0.000|
+            |        11.437(F)|      SLOW  |         6.325(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<18>|        10.512(F)|      SLOW  |         4.730(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.160(F)|      SLOW  |         6.701(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<19>|        10.512(F)|      SLOW  |         4.696(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.160(F)|      SLOW  |         6.701(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<20>|        12.996(F)|      SLOW  |         4.739(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.646(F)|      SLOW  |         8.056(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<21>|        12.996(F)|      SLOW  |         4.719(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.646(F)|      SLOW  |         8.056(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<22>|        14.501(F)|      SLOW  |         5.125(F)|      FAST  |XLXN_239          |   0.000|
+            |        16.151(F)|      SLOW  |         8.884(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<23>|        13.676(F)|      SLOW  |         4.968(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.326(F)|      SLOW  |         8.433(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<24>|        12.305(F)|      SLOW  |         5.362(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.954(F)|      SLOW  |         7.895(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<25>|        12.305(F)|      SLOW  |         5.501(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.954(F)|      SLOW  |         7.895(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<26>|        11.240(F)|      SLOW  |         5.309(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.889(F)|      SLOW  |         7.232(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<27>|        11.200(F)|      SLOW  |         5.181(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.849(F)|      SLOW  |         7.231(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<28>|        12.751(F)|      SLOW  |         6.049(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.849(F)|      SLOW  |         7.231(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<29>|        12.962(F)|      SLOW  |         5.640(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.246(F)|      SLOW  |         6.822(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<30>|        12.938(F)|      SLOW  |         5.806(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.520(F)|      SLOW  |         6.988(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_254<31>|        10.868(F)|      SLOW  |         5.447(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.520(F)|      SLOW  |         6.988(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<0> |        13.534(F)|      SLOW  |         5.244(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.173(F)|      SLOW  |         8.487(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<1> |        13.534(F)|      SLOW  |         5.378(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.173(F)|      SLOW  |         8.487(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<2> |        13.489(F)|      SLOW  |         5.428(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.128(F)|      SLOW  |         8.504(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<3> |        13.489(F)|      SLOW  |         5.468(F)|      FAST  |XLXN_239          |   0.000|
+            |        15.128(F)|      SLOW  |         8.504(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<4> |        13.284(F)|      SLOW  |         5.352(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.926(F)|      SLOW  |         8.410(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<5> |        13.095(F)|      SLOW  |         5.323(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.737(F)|      SLOW  |         8.293(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<6> |        13.202(F)|      SLOW  |         5.495(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.844(F)|      SLOW  |         8.344(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<7> |        12.837(F)|      SLOW  |         5.303(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.479(F)|      SLOW  |         8.110(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<8> |         8.708(F)|      SLOW  |         4.290(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.353(F)|      SLOW  |         5.588(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<9> |         8.708(F)|      SLOW  |         4.293(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.353(F)|      SLOW  |         5.588(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<10>|        11.174(F)|      SLOW  |         4.460(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.819(F)|      SLOW  |         7.081(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<11>|        11.174(F)|      SLOW  |         4.373(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.819(F)|      SLOW  |         7.081(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<12>|         8.970(F)|      SLOW  |         3.926(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.617(F)|      SLOW  |         5.852(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<13>|        11.145(F)|      SLOW  |         4.308(F)|      FAST  |XLXN_239          |   0.000|
+            |        12.792(F)|      SLOW  |         7.044(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<14>|         9.133(F)|      SLOW  |         3.842(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.780(F)|      SLOW  |         5.914(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<15>|         8.649(F)|      SLOW  |         4.141(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.296(F)|      SLOW  |         5.531(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<16>|        18.613(F)|      SLOW  |         4.702(F)|      FAST  |XLXN_239          |   0.000|
+            |        20.261(F)|      SLOW  |        11.286(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<17>|        18.613(F)|      SLOW  |         4.692(F)|      FAST  |XLXN_239          |   0.000|
+            |        20.261(F)|      SLOW  |        11.286(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<18>|        17.791(F)|      SLOW  |         4.443(F)|      FAST  |XLXN_239          |   0.000|
+            |        19.439(F)|      SLOW  |        10.838(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<19>|        18.200(F)|      SLOW  |         4.654(F)|      FAST  |XLXN_239          |   0.000|
+            |        19.848(F)|      SLOW  |        11.060(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<20>|        18.198(F)|      SLOW  |         4.564(F)|      FAST  |XLXN_239          |   0.000|
+            |        19.848(F)|      SLOW  |        11.060(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<21>|        17.350(F)|      SLOW  |         4.390(F)|      FAST  |XLXN_239          |   0.000|
+            |        19.000(F)|      SLOW  |        10.586(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<22>|        19.014(F)|      SLOW  |         4.868(F)|      FAST  |XLXN_239          |   0.000|
+            |        20.664(F)|      SLOW  |        11.502(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<23>|        19.014(F)|      SLOW  |         4.862(F)|      FAST  |XLXN_239          |   0.000|
+            |        20.664(F)|      SLOW  |        11.502(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<24>|        12.649(F)|      SLOW  |         4.810(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.298(F)|      SLOW  |         8.001(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<25>|        12.541(F)|      SLOW  |         4.753(F)|      FAST  |XLXN_239          |   0.000|
+            |        14.190(F)|      SLOW  |         7.922(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<26>|        11.793(F)|      SLOW  |         4.506(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.442(F)|      SLOW  |         7.512(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<27>|        11.446(F)|      SLOW  |         4.595(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.095(F)|      SLOW  |         7.318(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<28>|        11.765(F)|      SLOW  |         4.730(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.417(F)|      SLOW  |         7.477(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<29>|        11.557(F)|      SLOW  |         4.823(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.209(F)|      SLOW  |         7.365(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<30>|        11.557(F)|      SLOW  |         4.798(F)|      FAST  |XLXN_239          |   0.000|
+            |        13.209(F)|      SLOW  |         7.365(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_255<31>|         8.965(F)|      SLOW  |         3.900(F)|      FAST  |XLXN_239          |   0.000|
+            |        10.617(F)|      SLOW  |         5.852(F)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<0> |        16.290(R)|      SLOW  |         6.253(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<1> |        13.769(R)|      SLOW  |         5.860(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<2> |        14.209(R)|      SLOW  |         6.610(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<3> |        13.336(R)|      SLOW  |         5.497(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<4> |        13.101(R)|      SLOW  |         5.626(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<5> |        12.590(R)|      SLOW  |         5.279(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<6> |        14.276(R)|      SLOW  |         6.560(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<7> |        14.235(R)|      SLOW  |         6.174(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<8> |        10.902(R)|      SLOW  |         4.799(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<9> |        12.459(R)|      SLOW  |         5.618(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<10>|        13.009(R)|      SLOW  |         4.909(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<11>|        12.583(R)|      SLOW  |         5.411(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<12>|        12.118(R)|      SLOW  |         5.271(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<13>|        12.928(R)|      SLOW  |         5.481(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<14>|        12.290(R)|      SLOW  |         5.366(R)|      FAST  |XLXN_242          |   0.000|
+XLXN_262<15>|        12.548(R)|      SLOW  |         5.185(R)|      FAST  |XLXN_242          |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk_i
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_i          |   17.998|    6.297|    7.915|   13.827|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+XLXN_261<0>    |XLXN_262<0>    |   21.528|
+XLXN_261<0>    |XLXN_262<1>    |   20.472|
+XLXN_261<0>    |XLXN_262<2>    |   23.616|
+XLXN_261<0>    |XLXN_262<3>    |   20.136|
+XLXN_261<0>    |XLXN_262<4>    |   19.104|
+XLXN_261<0>    |XLXN_262<5>    |   18.603|
+XLXN_261<0>    |XLXN_262<6>    |   20.712|
+XLXN_261<0>    |XLXN_262<7>    |   24.187|
+XLXN_261<0>    |XLXN_262<8>    |   17.212|
+XLXN_261<0>    |XLXN_262<9>    |   18.275|
+XLXN_261<0>    |XLXN_262<10>   |   19.413|
+XLXN_261<0>    |XLXN_262<11>   |   18.833|
+XLXN_261<0>    |XLXN_262<12>   |   17.728|
+XLXN_261<0>    |XLXN_262<13>   |   19.329|
+XLXN_261<0>    |XLXN_262<14>   |   19.279|
+XLXN_261<0>    |XLXN_262<15>   |   20.891|
+XLXN_261<1>    |XLXN_262<0>    |   23.257|
+XLXN_261<1>    |XLXN_262<1>    |   21.016|
+XLXN_261<1>    |XLXN_262<2>    |   22.086|
+XLXN_261<1>    |XLXN_262<3>    |   20.701|
+XLXN_261<1>    |XLXN_262<4>    |   19.231|
+XLXN_261<1>    |XLXN_262<5>    |   19.125|
+XLXN_261<1>    |XLXN_262<6>    |   20.890|
+XLXN_261<1>    |XLXN_262<7>    |   23.998|
+XLXN_261<1>    |XLXN_262<8>    |   18.080|
+XLXN_261<1>    |XLXN_262<9>    |   18.401|
+XLXN_261<1>    |XLXN_262<10>   |   20.168|
+XLXN_261<1>    |XLXN_262<11>   |   19.059|
+XLXN_261<1>    |XLXN_262<12>   |   18.535|
+XLXN_261<1>    |XLXN_262<13>   |   19.736|
+XLXN_261<1>    |XLXN_262<14>   |   19.309|
+XLXN_261<1>    |XLXN_262<15>   |   20.896|
+XLXN_261<2>    |XLXN_262<0>    |   20.351|
+XLXN_261<2>    |XLXN_262<1>    |   19.186|
+XLXN_261<2>    |XLXN_262<2>    |   21.683|
+XLXN_261<2>    |XLXN_262<3>    |   17.937|
+XLXN_261<2>    |XLXN_262<4>    |   17.726|
+XLXN_261<2>    |XLXN_262<5>    |   17.418|
+XLXN_261<2>    |XLXN_262<6>    |   19.099|
+XLXN_261<2>    |XLXN_262<7>    |   19.990|
+XLXN_261<2>    |XLXN_262<8>    |   16.408|
+XLXN_261<2>    |XLXN_262<9>    |   18.340|
+XLXN_261<2>    |XLXN_262<10>   |   17.100|
+XLXN_261<2>    |XLXN_262<11>   |   17.545|
+XLXN_261<2>    |XLXN_262<12>   |   17.555|
+XLXN_261<2>    |XLXN_262<13>   |   17.483|
+XLXN_261<2>    |XLXN_262<14>   |   18.099|
+XLXN_261<2>    |XLXN_262<15>   |   18.788|
+XLXN_261<3>    |XLXN_262<0>    |   18.685|
+XLXN_261<3>    |XLXN_262<1>    |   18.600|
+XLXN_261<3>    |XLXN_262<2>    |   19.753|
+XLXN_261<3>    |XLXN_262<3>    |   16.792|
+XLXN_261<3>    |XLXN_262<4>    |   17.138|
+XLXN_261<3>    |XLXN_262<5>    |   16.798|
+XLXN_261<3>    |XLXN_262<6>    |   18.153|
+XLXN_261<3>    |XLXN_262<7>    |   19.510|
+XLXN_261<3>    |XLXN_262<8>    |   15.403|
+XLXN_261<3>    |XLXN_262<9>    |   17.267|
+XLXN_261<3>    |XLXN_262<10>   |   16.182|
+XLXN_261<3>    |XLXN_262<11>   |   16.854|
+XLXN_261<3>    |XLXN_262<12>   |   16.899|
+XLXN_261<3>    |XLXN_262<13>   |   16.756|
+XLXN_261<3>    |XLXN_262<14>   |   17.551|
+XLXN_261<3>    |XLXN_262<15>   |   17.906|
+XLXN_261<4>    |XLXN_262<0>    |   18.423|
+XLXN_261<4>    |XLXN_262<1>    |   17.800|
+XLXN_261<4>    |XLXN_262<2>    |   19.317|
+XLXN_261<4>    |XLXN_262<3>    |   16.539|
+XLXN_261<4>    |XLXN_262<4>    |   16.443|
+XLXN_261<4>    |XLXN_262<5>    |   16.360|
+XLXN_261<4>    |XLXN_262<6>    |   17.501|
+XLXN_261<4>    |XLXN_262<7>    |   19.002|
+XLXN_261<4>    |XLXN_262<8>    |   15.158|
+XLXN_261<4>    |XLXN_262<9>    |   16.921|
+XLXN_261<4>    |XLXN_262<10>   |   15.647|
+XLXN_261<4>    |XLXN_262<11>   |   16.325|
+XLXN_261<4>    |XLXN_262<12>   |   16.138|
+XLXN_261<4>    |XLXN_262<13>   |   16.415|
+XLXN_261<4>    |XLXN_262<14>   |   16.736|
+XLXN_261<4>    |XLXN_262<15>   |   17.368|
+---------------+---------------+---------+
+
+
+Analysis completed Thu Jul 28 09:28:25 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 291 MB
+
+
+

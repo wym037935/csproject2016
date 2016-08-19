@@ -25,8 +25,8 @@ Analyzing Verilog file "D:/study/simplemips1.1/test_sim.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 156620 KB
-Fuse CPU Usage: 281 ms
+Fuse Memory Usage: 155916 KB
+Fuse CPU Usage: 218 ms
 Compiling module PC
 Compiling module IF
 Compiling module IF_ID
@@ -58,5 +58,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 27 Verilog Units
 Built simulation executable D:/study/simplemips1.1/simplemipst_simplemipst_sch_tb_isim_beh.exe
-Fuse Memory Usage: 172084 KB
-Fuse CPU Usage: 656 ms
+Fuse Memory Usage: 172404 KB
+Fuse CPU Usage: 593 ms

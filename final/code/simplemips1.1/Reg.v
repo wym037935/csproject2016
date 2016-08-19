@@ -12,13 +12,118 @@ module Reg(
     output reg[31:0] rdata2,
     input wire we,
     input wire[4:0] waddr,
-    input wire[31:0] wdata
-	
+    input wire[31:0] wdata,
+	 
+	 input wire[4:0] reg_addr,
+	 output reg[15:0] led_output
 );
 	 
     reg[31:0] regs[0:31];
 
-
+	 always @(*)begin
+		  case 	(reg_addr)	
+				5'b00000:begin
+					led_output <= regs[0][15:0]	;
+				end
+				5'b00001:begin
+					led_output <= regs[1][15:0];
+				end
+				5'b00010:begin
+					led_output <= regs[2][15:0];
+				end
+				5'b00011:begin
+					led_output <= regs[3][15:0];
+				end
+				5'b00100:begin
+					led_output <= regs[4][15:0];
+				end
+				5'b00101:begin
+					led_output <= regs[5][15:0];
+				end
+				5'b00110:begin
+					led_output <= regs[6][15:0];
+				end
+				5'b00111:begin
+					led_output <= regs[7][15:0];
+				end
+				5'b01000:begin
+					led_output <= regs[8][15:0];
+				end
+				5'b01001:begin
+					led_output <= regs[9][15:0];
+				end
+				5'b01010:begin
+					led_output <= regs[10][15:0];
+				end
+				5'b01011:begin
+					led_output <= regs[11][15:0];
+				end
+				5'b01100:begin
+					led_output <= regs[12][15:0];
+				end
+				5'b01101:begin
+					led_output <= regs[13][15:0];
+				end
+				5'b01110:begin
+					led_output <= regs[14][15:0];
+				end
+				5'b01111:begin
+					led_output <= regs[15][15:0];
+				end
+				5'b10000:begin
+					led_output <= regs[16][15:0];
+				end
+				5'b10001:begin
+					led_output <= regs[17][15:0];
+				end
+				5'b10010:begin
+					led_output <= regs[18][15:0];
+				end
+				5'b10011:begin
+					led_output <= regs[19][15:0];
+				end
+				5'b10100:begin
+					led_output <= regs[20][15:0];
+				end
+				5'b10101:begin
+					led_output <= regs[21][15:0];
+				end
+				5'b10110:begin
+					led_output <= regs[22][15:0];
+				end
+				5'b10111:begin
+					led_output <= regs[23][15:0];
+				end
+				5'b11000:begin
+					led_output <= regs[24][15:0];
+				end
+				5'b11001:begin
+					led_output <= regs[25][15:0];
+				end
+				5'b11010:begin
+					led_output <= regs[26][15:0];
+				end
+				5'b11011:begin
+					led_output <= regs[27][15:0];
+				end
+				5'b11100:begin
+					led_output <= regs[28][15:0];
+				end
+				5'b11101:begin
+					led_output <= regs[29][15:0];
+				end
+				5'b11110:begin
+					led_output <= regs[30][15:0];
+				end
+				5'b11111:begin
+					led_output <= regs[31][15:0];
+				end
+				default:begin
+					led_output <= 32'h00000000;
+				end
+			endcase
+		end
+		
     always @ (posedge clk) begin
         if (rst == `RstDisable) begin
             if ((we == `WriteEnable) && (waddr != 5'h0)) begin

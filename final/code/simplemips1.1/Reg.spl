@@ -8,9 +8,11 @@ we
 =raddr2[4:0]=
 =waddr[4:0]=
 =wdata[31:0]=
+=reg_addr[4:0]=
 [Outputs]
 =rdata1[31:0]=
 =rdata2[31:0]=
+=led_output[15:0]=
 [BiDir]
 [ATTRIBUTES]
 VeriModel Reg

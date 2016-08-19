@@ -1,11 +1,27 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Sun Jul 24 15:02:25 2016
-# Process ID: 620
+# Start of session at: Mon Jul 25 22:23:55 2016
+# Process ID: 1080
 # Log file: D:/study/simplemips1.1/planAhead_run_1/planAhead.log
 # Journal file: D:/study/simplemips1.1/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
 source D:/study/simplemips1.1/pa.fromHdl.tcl
 update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {XLXN_260[31]}]]
+startgroup
+set_property package_pin L3 [get_ports {XLXN_261[4]}]
+endgroup
+startgroup
+set_property package_pin L4 [get_ports {XLXN_261[3]}]
+endgroup
+startgroup
+set_property package_pin M3 [get_ports {XLXN_261[2]}]
+endgroup
+startgroup
+set_property package_pin M4 [get_ports {XLXN_261[1]}]
+endgroup
+startgroup
+set_property package_pin N5 [get_ports {XLXN_261[0]}]
+endgroup

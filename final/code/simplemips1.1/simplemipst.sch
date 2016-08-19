@@ -88,7 +88,6 @@
         <signal name="XLXN_248" />
         <signal name="XLXN_249" />
         <signal name="XLXN_250" />
-        <signal name="XLXN_251(31:0)" />
         <signal name="XLXN_252(19:0)" />
         <signal name="XLXN_253(19:0)" />
         <signal name="XLXN_254(31:0)" />
@@ -96,6 +95,8 @@
         <signal name="XLXN_256" />
         <signal name="XLXN_257" />
         <signal name="XLXN_258(2:0)" />
+        <signal name="XLXN_261(4:0)" />
+        <signal name="XLXN_262(15:0)" />
         <port polarity="Input" name="clk_i" />
         <port polarity="Output" name="XLXN_243" />
         <port polarity="Input" name="XLXN_244" />
@@ -105,13 +106,14 @@
         <port polarity="Output" name="XLXN_248" />
         <port polarity="Output" name="XLXN_249" />
         <port polarity="Output" name="XLXN_250" />
-        <port polarity="Output" name="XLXN_251(31:0)" />
         <port polarity="Output" name="XLXN_252(19:0)" />
         <port polarity="Output" name="XLXN_253(19:0)" />
         <port polarity="BiDirectional" name="XLXN_254(31:0)" />
         <port polarity="BiDirectional" name="XLXN_255(31:0)" />
         <port polarity="Input" name="XLXN_256" />
         <port polarity="Input" name="XLXN_257" />
+        <port polarity="Input" name="XLXN_261(4:0)" />
+        <port polarity="Output" name="XLXN_262(15:0)" />
         <blockdef name="PC">
             <timestamp>2016-7-23T6:10:46</timestamp>
             <rect width="304" x="64" y="-256" height="256" />
@@ -192,8 +194,9 @@
             <line x2="528" y1="-32" y2="-32" x1="464" />
         </blockdef>
         <blockdef name="Reg">
-            <timestamp>2016-7-23T6:10:50</timestamp>
-            <rect width="256" x="64" y="-576" height="576" />
+            <timestamp>2016-7-25T14:32:1</timestamp>
+            <rect width="64" x="0" y="148" height="24" />
+            <rect width="64" x="320" y="212" height="24" />
             <line x2="0" y1="-544" y2="-544" x1="64" />
             <line x2="0" y1="-480" y2="-480" x1="64" />
             <line x2="0" y1="-416" y2="-416" x1="64" />
@@ -211,6 +214,9 @@
             <line x2="384" y1="-544" y2="-544" x1="320" />
             <rect width="64" x="320" y="-44" height="24" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
+            <rect width="256" x="64" y="-576" height="920" />
+            <line x2="4" y1="160" y2="160" x1="68" />
+            <line x2="384" y1="224" y2="224" x1="320" />
         </blockdef>
         <blockdef name="ID_EX">
             <timestamp>2016-7-24T7:56:44</timestamp>
@@ -522,8 +528,10 @@
             <blockpin signalname="XLXN_20(4:0)" name="raddr2(4:0)" />
             <blockpin signalname="XLXN_95(4:0)" name="waddr(4:0)" />
             <blockpin signalname="XLXN_94(31:0)" name="wdata(31:0)" />
+            <blockpin signalname="XLXN_261(4:0)" name="reg_addr(4:0)" />
             <blockpin signalname="XLXN_14(31:0)" name="rdata1(31:0)" />
             <blockpin signalname="XLXN_16(31:0)" name="rdata2(31:0)" />
+            <blockpin signalname="XLXN_262(15:0)" name="led_output(15:0)" />
         </block>
         <block symbolname="MEM_WB" name="XLXI_12">
             <blockpin signalname="XLXN_242" name="clk" />
@@ -629,7 +637,7 @@
             <blockpin signalname="XLXN_250" name="extram_we" />
             <blockpin signalname="XLXN_129" name="enable_com_write" />
             <blockpin signalname="XLXN_118(31:0)" name="data_out(31:0)" />
-            <blockpin signalname="XLXN_251(31:0)" name="segdisp(31:0)" />
+            <blockpin name="segdisp(31:0)" />
             <blockpin signalname="XLXN_252(19:0)" name="baseram_addr(19:0)" />
             <blockpin signalname="XLXN_253(19:0)" name="extram_addr(19:0)" />
             <blockpin signalname="XLXN_130(7:0)" name="com_data_out(7:0)" />
@@ -930,7 +938,9 @@
         <branch name="XLXN_95(4:0)">
             <wire x2="1904" y1="2160" y2="2160" x1="1856" />
             <wire x2="1856" y1="2160" y2="2288" x1="1856" />
-            <wire x2="5728" y1="2288" y2="2288" x1="1856" />
+            <wire x2="1904" y1="2288" y2="2288" x1="1856" />
+            <wire x2="2288" y1="2288" y2="2288" x1="1904" />
+            <wire x2="5728" y1="2288" y2="2288" x1="2288" />
             <wire x2="5728" y1="1104" y2="1104" x1="5680" />
             <wire x2="5728" y1="1104" y2="2288" x1="5728" />
         </branch>
@@ -1212,10 +1222,6 @@
             <wire x2="6496" y1="1760" y2="1760" x1="6464" />
         </branch>
         <iomarker fontsize="28" x="6496" y="1760" name="XLXN_250" orien="R0" />
-        <branch name="XLXN_251(31:0)">
-            <wire x2="6496" y1="1952" y2="1952" x1="6464" />
-        </branch>
-        <iomarker fontsize="28" x="6496" y="1952" name="XLXN_251(31:0)" orien="R0" />
         <branch name="XLXN_252(19:0)">
             <wire x2="6496" y1="2016" y2="2016" x1="6464" />
         </branch>
@@ -1245,5 +1251,13 @@
             <wire x2="3232" y1="960" y2="1440" x1="3232" />
             <wire x2="3296" y1="960" y2="960" x1="3232" />
         </branch>
+        <branch name="XLXN_261(4:0)">
+            <wire x2="1904" y1="2416" y2="2416" x1="1872" />
+        </branch>
+        <iomarker fontsize="28" x="1872" y="2416" name="XLXN_261(4:0)" orien="R180" />
+        <branch name="XLXN_262(15:0)">
+            <wire x2="2320" y1="2480" y2="2480" x1="2288" />
+        </branch>
+        <iomarker fontsize="28" x="2320" y="2480" name="XLXN_262(15:0)" orien="R0" />
     </sheet>
 </drawing>

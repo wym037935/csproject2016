@@ -1,4 +1,7 @@
+verilog work "ipcore_dir/clockpll.v"
+verilog work "uart_async.v"
 verilog work "serial_port.v"
+verilog work "RST_SYNC.v"
 verilog work "Reg.v"
 verilog work "phy_mem.v"
 verilog work "PC.v"

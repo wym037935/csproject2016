@@ -10,12 +10,21 @@ Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/r
 Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source D:/study/simplemips1.1/pa.fromHdl.tcl
-# create_project -name simplemips1.1 -dir "D:/study/simplemips1.1/planAhead_run_2" -part xc6slx100fgg676-2
+# create_project -name simplemips1.1 -dir "D:/study/simplemips1.1/planAhead_run_1" -part xc6slx100fgg676-2
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
 # set_property target_constrs_file "simplemipst.ucf" [current_fileset -constrset]
 Adding file 'D:/study/simplemips1.1/simplemipst.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {ipcore_dir/clockpll.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {uart_async.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
 # set hdlfile [add_files [list {serial_port.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {RST_SYNC.v}]]
 # set_property file_type Verilog $hdlfile
 # set_property library work $hdlfile
 # set hdlfile [add_files [list {Reg.v}]]
@@ -65,8 +74,12 @@ Adding file 'D:/study/simplemips1.1/simplemipst.ucf' to fileset 'constrs_1'
 # open_rtl_design -part xc6slx100fgg676-2
 Using Verific elaboration
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "D:/study/simplemips1.1/ipcore_dir/clockpll.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/uart_async.v" into library work
+Parsing verilog file "header.v" included at line 14. [D:/study/simplemips1.1/uart_async.v:14]
 Analyzing Verilog file "D:/study/simplemips1.1/serial_port.v" into library work
 Parsing verilog file "header.v" included at line 9. [D:/study/simplemips1.1/serial_port.v:9]
+Analyzing Verilog file "D:/study/simplemips1.1/RST_SYNC.v" into library work
 Analyzing Verilog file "D:/study/simplemips1.1/Reg.v" into library work
 Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/Reg.v:1]
 Analyzing Verilog file "D:/study/simplemips1.1/phy_mem.v" into library work
@@ -96,12 +109,6 @@ Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/EX.v
 Analyzing Verilog file "D:/study/simplemips1.1/CPU.v" into library work
 Parsing verilog file "header.v" included at line 2. [D:/study/simplemips1.1/CPU.v:2]
 Analyzing Verilog file "D:/study/simplemips1.1/simplemipst.vf" into library work
-CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'clockpll' instantiated as 'instance_name' [D:/study/simplemips1.1/CPU.v:15]
-Resolution: File names need to match cell names: an EDIF definition will be found in clockpll.edf; an HDL definition may be placed in any Verilog/VHDL file.
-CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'uart_async_transmitter(ClkFrequency=20000000,Baud=115200)' instantiated as 'utrans' [D:/study/simplemips1.1/serial_port.v:38]
-Resolution: File names need to match cell names: an EDIF definition will be found in uart_async_transmitter(ClkFrequency=20000000,Baud=115200).edf; an HDL definition may be placed in any Verilog/VHDL file.
-CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'uart_async_receiver(ClkFrequency=20000000,Baud=115200)' instantiated as 'urecv' [D:/study/simplemips1.1/serial_port.v:45]
-Resolution: File names need to match cell names: an EDIF definition will be found in uart_async_receiver(ClkFrequency=20000000,Baud=115200).edf; an HDL definition may be placed in any Verilog/VHDL file.
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx100/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx100/ClockBuffers.xml
 Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
@@ -114,6 +121,26 @@ Finished Parsing UCF File [D:/study/simplemips1.1/simplemipst.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: 15e71d59
-open_rtl_design: Time (s): elapsed = 00:00:08 . Memory (MB): peak = 725.207 ; gain = 258.867
+Phase 0 | Netlist Checksum: c7703a14
+open_rtl_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 693.930 ; gain = 211.699
 update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {XLXN_260[31]}]]
+startgroup
+set_property package_pin L3 [get_ports {XLXN_261[4]}]
+endgroup
+startgroup
+set_property package_pin L4 [get_ports {XLXN_261[3]}]
+endgroup
+startgroup
+set_property package_pin M3 [get_ports {XLXN_261[2]}]
+endgroup
+startgroup
+set_property package_pin M4 [get_ports {XLXN_261[1]}]
+endgroup
+startgroup
+set_property package_pin N5 [get_ports {XLXN_261[0]}]
+endgroup
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Mon Jul 25 22:32:50 2016...
+INFO: [Common 17-83] Releasing license: PlanAhead

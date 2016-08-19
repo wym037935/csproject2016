@@ -2,9 +2,27 @@ Command line:
    simplemipst_simplemipst_sch_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  52284
+     -socket  51058
 
-Sun Jul 24 17:00:07 2016
+Thu Jul 28 04:08:36 2016
 
 
- Elaboration Time: 0.140625 sec
+ Elaboration Time: 0.125 sec
+
+ Current Memory Usage: 882.348 Meg
+
+ Total Signals          : 417
+ Total Nets             : 1965
+ Total Signal Drivers   : 210
+ Total Blocks           : 47
+ Total Primitive Blocks : 23
+ Total Processes        : 332
+ Total Traceable Variables  : 548
+ Total Scalar Nets and Variables : 12748
+
+ Total Simulation Time: 0.171875 sec
+
+ Current Memory Usage: 410.714 Meg
+
+Thu Jul 28 08:29:19 2016
+

@@ -1,4 +1,4 @@
-//basical definition
+	//basical definition
 `define RstEnable     1'b0
 `define RstDisable    1'b1
 `define WriteEnable   1'b1

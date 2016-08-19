@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : simplemipst.vf
-// /___/   /\     Timestamp : 07/24/2016 15:57:47
+// /___/   /\     Timestamp : 07/25/2016 22:32:53
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -24,6 +24,7 @@ module simplemipst(clk_i,
                    XLXN_244, 
                    XLXN_256, 
                    XLXN_257, 
+                   XLXN_261, 
                    XLXN_243, 
                    XLXN_245, 
                    XLXN_246, 
@@ -31,9 +32,9 @@ module simplemipst(clk_i,
                    XLXN_248, 
                    XLXN_249, 
                    XLXN_250, 
-                   XLXN_251, 
                    XLXN_252, 
                    XLXN_253, 
+                   XLXN_262, 
                    XLXN_254, 
                    XLXN_255);
 
@@ -41,6 +42,7 @@ module simplemipst(clk_i,
     input XLXN_244;
     input XLXN_256;
     input XLXN_257;
+    input [4:0] XLXN_261;
    output XLXN_243;
    output XLXN_245;
    output XLXN_246;
@@ -48,9 +50,9 @@ module simplemipst(clk_i,
    output XLXN_248;
    output XLXN_249;
    output XLXN_250;
-   output [31:0] XLXN_251;
    output [19:0] XLXN_252;
    output [19:0] XLXN_253;
+   output [15:0] XLXN_262;
     inout [31:0] XLXN_254;
     inout [31:0] XLXN_255;
    
@@ -170,12 +172,14 @@ module simplemipst(clk_i,
    Reg  XLXI_6 (.clk(XLXN_242), 
                .raddr1(XLXN_17[4:0]), 
                .raddr2(XLXN_20[4:0]), 
+               .reg_addr(XLXN_261[4:0]), 
                .re1(XLXN_39), 
                .re2(XLXN_100), 
                .rst(XLXN_235), 
                .waddr(XLXN_95[4:0]), 
                .wdata(XLXN_94[31:0]), 
                .we(XLXN_93), 
+               .led_output(XLXN_262[15:0]), 
                .rdata1(XLXN_14[31:0]), 
                .rdata2(XLXN_16[31:0]));
    ID_EX  XLXI_7 (.clk(XLXN_242), 
@@ -281,7 +285,7 @@ module simplemipst(clk_i,
                     .extram_oe(XLXN_249), 
                     .extram_we(XLXN_250), 
                     .int_com_ack(XLXN_128), 
-                    .segdisp(XLXN_251[31:0]), 
+                    .segdisp(), 
                     .baseram_data(XLXN_254[31:0]), 
                     .extram_data(XLXN_255[31:0]));
    MMU  XLXI_18 (.addr(XLXN_111[31:0]), 

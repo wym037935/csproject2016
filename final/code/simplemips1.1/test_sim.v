@@ -1,4 +1,4 @@
-// Verilog test fixture created from schematic D:\study\simplemips1.1\simplemipst.sch - Sun Jul 24 15:49:08 2016
+// Verilog test fixture created from schematic D:\study\simplemips1.1\simplemipst.sch - Mon Jul 25 23:25:24 2016
 
 `timescale 1ns / 1ps
 
@@ -9,6 +9,7 @@ module simplemipst_simplemipst_sch_tb();
    reg XLXN_244;
    reg XLXN_256;
    reg XLXN_257;
+   reg [4:0] XLXN_261;
 
 // Output
    wire XLXN_243;
@@ -18,9 +19,9 @@ module simplemipst_simplemipst_sch_tb();
    wire XLXN_248;
    wire XLXN_249;
    wire XLXN_250;
-   wire [31:0] XLXN_251;
    wire [19:0] XLXN_252;
    wire [19:0] XLXN_253;
+   wire [15:0] XLXN_262;
 
 // Bidirs
    wire [31:0] XLXN_254;
@@ -37,13 +38,14 @@ module simplemipst_simplemipst_sch_tb();
 		.XLXN_248(XLXN_248), 
 		.XLXN_249(XLXN_249), 
 		.XLXN_250(XLXN_250), 
-		.XLXN_251(XLXN_251), 
 		.XLXN_252(XLXN_252), 
 		.XLXN_253(XLXN_253), 
 		.XLXN_254(XLXN_254), 
 		.XLXN_255(XLXN_255), 
 		.XLXN_256(XLXN_256), 
-		.XLXN_257(XLXN_257)
+		.XLXN_257(XLXN_257), 
+		.XLXN_261(XLXN_261), 
+		.XLXN_262(XLXN_262)
    );
 // Initialize Inputs
    `ifdef auto_init
@@ -54,6 +56,7 @@ module simplemipst_simplemipst_sch_tb();
 		XLXN_255 = 0;
 		XLXN_256 = 0;
 		XLXN_257 = 0;
+		XLXN_261 = 0;
    `endif
 	
 	initial begin
@@ -69,5 +72,4 @@ module simplemipst_simplemipst_sch_tb();
 	forever #10 clk_i = ~clk_i;
 	#100 $stop;
 	end 
-		
 endmodule

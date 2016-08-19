@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: simplemipst.prj
 
@@ -99,15 +99,28 @@ DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
 =========================================================================
 
 
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "D:\study\simplemips1.1\ipcore_dir\clockpll.v" into library work
+Parsing module <clockpll>.
+Analyzing Verilog file "D:\study\simplemips1.1\uart_async.v" into library work
+Parsing verilog file "header.v" included at line 14.
+Parsing module <uart_async_transmitter>.
+Parsing module <uart_async_receiver>.
+Parsing module <ASSERTION_ERROR>.
+Parsing module <BaudTickGen>.
 Analyzing Verilog file "D:\study\simplemips1.1\serial_port.v" into library work
 Parsing verilog file "header.v" included at line 9.
 Parsing module <serial_port>.
+Analyzing Verilog file "D:\study\simplemips1.1\RST_SYNC.v" into library work
+Parsing module <RST_SYNC>.
 Analyzing Verilog file "D:\study\simplemips1.1\Reg.v" into library work
 Parsing verilog file "header.v" included at line 1.
 Parsing module <Reg>.
@@ -149,14 +162,1268 @@ Parsing module <EX>.
 Analyzing Verilog file "D:\study\simplemips1.1\CPU.v" into library work
 Parsing verilog file "header.v" included at line 2.
 Parsing module <CPU>.
-ERROR:HDLCompiler:718 - "D:\study\simplemips1.1\CPU.v" Line 15: Port connections cannot be mixed ordered and named
-ERROR:HDLCompiler:598 - "D:\study\simplemips1.1\CPU.v" Line 5: Module <CPU> ignored due to previous errors.
-Verilog file D:\study\simplemips1.1\CPU.v ignored due to errors
+Analyzing Verilog file "D:\study\simplemips1.1\simplemipst.vf" into library work
+Parsing module <simplemipst>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <simplemipst>.
+
+Elaborating module <PC>.
+
+Elaborating module <IF>.
+
+Elaborating module <IF_ID>.
+
+Elaborating module <ID>.
+WARNING:HDLCompiler:1127 - "D:\study\simplemips1.1\ID.v" Line 77: Assignment to PC_4 ignored, since the identifier is never used
+
+Elaborating module <Reg>.
+
+Elaborating module <ID_EX>.
+
+Elaborating module <EX_MEM>.
+
+Elaborating module <MEM>.
+
+Elaborating module <MEM_WB>.
+
+Elaborating module <EX>.
+
+Elaborating module <CPU>.
+
+Elaborating module <clockpll>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=20,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=20,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=80,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "D:\study\simplemips1.1\ipcore_dir\clockpll.v" Line 124: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\study\simplemips1.1\ipcore_dir\clockpll.v" Line 125: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\study\simplemips1.1\ipcore_dir\clockpll.v" Line 126: Assignment to clkout5_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\study\simplemips1.1\ipcore_dir\clockpll.v" Line 127: Assignment to locked_unused ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <phy_mem>.
+
+Elaborating module <MMU>.
+
+Elaborating module <serial_port>.
+
+Elaborating module <uart_async_transmitter(ClkFrequency=20000000,Baud=115200)>.
+
+Elaborating module <BaudTickGen(ClkFrequency=20000000,Baud=115200)>.
+
+Elaborating module <uart_async_receiver(ClkFrequency=20000000,Baud=115200)>.
+
+Elaborating module <BaudTickGen(ClkFrequency=20000000,Baud=115200,Oversampling=8)>.
+
+Elaborating module <RST_SYNC>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <simplemipst>.
+    Related source file is "D:\study\simplemips1.1\simplemipst.vf".
+INFO:Xst:3210 - "D:\study\simplemips1.1\simplemipst.vf" line 268: Output port <segdisp> of the instance <XLXI_17> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <simplemipst> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "D:\study\simplemips1.1\PC.v".
+    Found 32-bit register for signal <pc>.
+    Found 32-bit adder for signal <pc[31]_GND_2_o_add_1_OUT> created at line 14.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <PC> synthesized.
+
+Synthesizing Unit <IF>.
+    Related source file is "D:\study\simplemips1.1\IF.v".
+    Summary:
+	no macro.
+Unit <IF> synthesized.
+
+Synthesizing Unit <IF_ID>.
+    Related source file is "D:\study\simplemips1.1\IF_ID.v".
+    Found 32-bit register for signal <id_inst>.
+    Found 32-bit register for signal <id_pc>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <IF_ID> synthesized.
+
+Synthesizing Unit <ID>.
+    Related source file is "D:\study\simplemips1.1\ID.v".
+    Found 32-bit adder for signal <PC_8> created at line 80.
+    Found 32-bit adder for signal <n0251> created at line 86.
+    Found 32-bit adder for signal <JUMP_ADDR_16> created at line 86.
+    Found 32x3-bit Read Only RAM for signal <_n0554>
+    Found 32-bit comparator equal for signal <Reg1_o[31]_Reg2_o[31]_equal_78_o> created at line 579
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred  72 Multiplexer(s).
+Unit <ID> synthesized.
+
+Synthesizing Unit <Reg>.
+    Related source file is "D:\study\simplemips1.1\Reg.v".
+    Found 1024-bit register for signal <n0071[1023:0]>.
+    Found 16-bit 32-to-1 multiplexer for signal <led_output> created at line 24.
+    Found 32-bit 32-to-1 multiplexer for signal <raddr1[4]_regs[31][31]_wide_mux_47_OUT> created at line 177.
+    Found 32-bit 32-to-1 multiplexer for signal <raddr2[4]_regs[31][31]_wide_mux_58_OUT> created at line 192.
+    Found 5-bit comparator equal for signal <raddr1[4]_waddr[4]_equal_44_o> created at line 174
+    Found 5-bit comparator equal for signal <raddr2[4]_waddr[4]_equal_55_o> created at line 189
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  43 Multiplexer(s).
+Unit <Reg> synthesized.
+
+Synthesizing Unit <ID_EX>.
+    Related source file is "D:\study\simplemips1.1\ID_EX.v".
+    Found 3-bit register for signal <ex_alusel>.
+    Found 32-bit register for signal <ex_reg1>.
+    Found 32-bit register for signal <ex_reg2>.
+    Found 32-bit register for signal <link_addr_o>.
+    Found 32-bit register for signal <ex_inst>.
+    Found 5-bit register for signal <ex_wd>.
+    Found 8-bit register for signal <ex_aluop>.
+    Found 1-bit register for signal <ex_wreg>.
+    Found 1-bit register for signal <next_delay_o>.
+    Found 1-bit register for signal <in_delay_o>.
+    Summary:
+	inferred 147 D-type flip-flop(s).
+Unit <ID_EX> synthesized.
+
+Synthesizing Unit <EX_MEM>.
+    Related source file is "D:\study\simplemips1.1\EX_MEM.v".
+    Found 32-bit register for signal <mem_wdata>.
+    Found 32-bit register for signal <mem_mem_addr>.
+    Found 32-bit register for signal <mem_reg2>.
+    Found 5-bit register for signal <mem_wd>.
+    Found 8-bit register for signal <mem_aluop>.
+    Found 1-bit register for signal <mem_wreg>.
+    Summary:
+	inferred 110 D-type flip-flop(s).
+Unit <EX_MEM> synthesized.
+
+Synthesizing Unit <MEM>.
+    Related source file is "D:\study\simplemips1.1\MEM.v".
+    Summary:
+	inferred  13 Multiplexer(s).
+Unit <MEM> synthesized.
+
+Synthesizing Unit <MEM_WB>.
+    Related source file is "D:\study\simplemips1.1\MEM_WB.v".
+    Found 32-bit register for signal <wb_wdata>.
+    Found 5-bit register for signal <wb_wd>.
+    Found 1-bit register for signal <wb_wreg>.
+    Summary:
+	inferred  38 D-type flip-flop(s).
+Unit <MEM_WB> synthesized.
+
+Synthesizing Unit <EX>.
+    Related source file is "D:\study\simplemips1.1\EX.v".
+WARNING:Xst:647 - Input <inst_i<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <in_delay_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 6-bit subtractor for signal <PWR_12_o_GND_14_o_sub_69_OUT> created at line 111.
+    Found 33-bit subtractor for signal <GND_14_o_GND_14_o_sub_99_OUT> created at line 159.
+    Found 33-bit adder for signal <n0163[32:0]> created at line 141.
+    Found 32-bit adder for signal <reg1_i[31]_signed_low16_inst[31]_add_119_OUT> created at line 222.
+    Found 32-bit shifter logical left for signal <reg1_i[31]_reg2_i[31]_shift_left_66_OUT> created at line 104
+    Found 32-bit shifter logical left for signal <reg1_i[31]_PWR_12_o_shift_left_69_OUT> created at line 111
+    Found 32-bit shifter logical right for signal <reg1_i[31]_reg2_i[4]_shift_right_70_OUT> created at line 112
+    Found 32-bit shifter logical right for signal <reg1_i[31]_reg2_i[31]_shift_right_76_OUT> created at line 120
+    Found 32x32-bit multiplier for signal <reg1_i[31]_reg2_i[31]_MuLt_99_OUT> created at line 162.
+    Found 32-bit 7-to-1 multiplexer for signal <wdata_o> created at line 181.
+    Found 64-bit 7-to-1 multiplexer for signal <_n0189> created at line 139.
+    Found 32-bit 5-to-1 multiplexer for signal <_n0220> created at line 41.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <moveout<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit comparator greater for signal <reg2_i[31]_reg1_i[31]_LessThan_91_o> created at line 147
+    Found 32-bit comparator greater for signal <reg1_i[31]_reg2_i[31]_LessThan_95_o> created at line 153
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  32 Latch(s).
+	inferred   2 Comparator(s).
+	inferred  19 Multiplexer(s).
+	inferred   4 Combinational logic shifter(s).
+Unit <EX> synthesized.
+
+Synthesizing Unit <CPU>.
+    Related source file is "D:\study\simplemips1.1\CPU.v".
+WARNING:Xst:647 - Input <rst_1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <CPU> synthesized.
+
+Synthesizing Unit <clockpll>.
+    Related source file is "D:\study\simplemips1.1\ipcore_dir\clockpll.v".
+    Summary:
+	no macro.
+Unit <clockpll> synthesized.
+
+Synthesizing Unit <phy_mem>.
+    Related source file is "D:\study\simplemips1.1\phy_mem.v".
+WARNING:Xst:653 - Signal <segdisp> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 2-bit register for signal <state>.
+    Found 32-bit register for signal <data_out>.
+    Found 1-bit register for signal <enable_com_write>.
+    Found 1-bit register for signal <is_write_prev>.
+    Found 1-bit register for signal <int_com_ack>.
+    Found 4-bit register for signal <write_cnt>.
+    Found 32-bit register for signal <write_addr_latch>.
+    Found 32-bit register for signal <write_data_latch>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk50M (falling_edge)                          |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <write_cnt_next> created at line 87.
+    Found 1-bit tristate buffer for signal <baseram_data<31>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<30>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<29>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<28>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<27>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<26>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<25>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<24>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<23>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<22>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<21>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<20>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<19>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<18>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<17>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<16>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<15>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<14>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<13>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<12>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<11>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<10>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<9>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<8>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<7>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<6>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<5>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<4>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<3>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<2>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<1>> created at line 134
+    Found 1-bit tristate buffer for signal <baseram_data<0>> created at line 134
+    Found 1-bit tristate buffer for signal <extram_data<31>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<30>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<29>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<28>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<27>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<26>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<25>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<24>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<23>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<22>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<21>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<20>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<19>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<18>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<17>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<16>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<15>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<14>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<13>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<12>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<11>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<10>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<9>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<8>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<7>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<6>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<5>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<4>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<3>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<2>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<1>> created at line 135
+    Found 1-bit tristate buffer for signal <extram_data<0>> created at line 135
+    Found 32-bit comparator equal for signal <addr_is_ram> created at line 91
+    Found 4-bit comparator greater for signal <write_cnt[3]_GND_56_o_LessThan_45_o> created at line 119
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 103 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   6 Multiplexer(s).
+	inferred  64 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <phy_mem> synthesized.
+
+Synthesizing Unit <MMU>.
+    Related source file is "D:\study\simplemips1.1\MMU.v".
+    Found 29-bit register for signal <dev_mem_addr>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <dev_mem_is_write>.
+    Found 1-bit register for signal <dev_mem_data_out<31>>.
+    Found 1-bit register for signal <dev_mem_data_out<30>>.
+    Found 1-bit register for signal <dev_mem_data_out<29>>.
+    Found 1-bit register for signal <dev_mem_data_out<28>>.
+    Found 1-bit register for signal <dev_mem_data_out<27>>.
+    Found 1-bit register for signal <dev_mem_data_out<26>>.
+    Found 1-bit register for signal <dev_mem_data_out<25>>.
+    Found 1-bit register for signal <dev_mem_data_out<24>>.
+    Found 1-bit register for signal <dev_mem_data_out<23>>.
+    Found 1-bit register for signal <dev_mem_data_out<22>>.
+    Found 1-bit register for signal <dev_mem_data_out<21>>.
+    Found 1-bit register for signal <dev_mem_data_out<20>>.
+    Found 1-bit register for signal <dev_mem_data_out<19>>.
+    Found 1-bit register for signal <dev_mem_data_out<18>>.
+    Found 1-bit register for signal <dev_mem_data_out<17>>.
+    Found 1-bit register for signal <dev_mem_data_out<16>>.
+    Found 1-bit register for signal <dev_mem_data_out<15>>.
+    Found 1-bit register for signal <dev_mem_data_out<14>>.
+    Found 1-bit register for signal <dev_mem_data_out<13>>.
+    Found 1-bit register for signal <dev_mem_data_out<12>>.
+    Found 1-bit register for signal <dev_mem_data_out<11>>.
+    Found 1-bit register for signal <dev_mem_data_out<10>>.
+    Found 1-bit register for signal <dev_mem_data_out<9>>.
+    Found 1-bit register for signal <dev_mem_data_out<8>>.
+    Found 1-bit register for signal <dev_mem_data_out<7>>.
+    Found 1-bit register for signal <dev_mem_data_out<6>>.
+    Found 1-bit register for signal <dev_mem_data_out<5>>.
+    Found 1-bit register for signal <dev_mem_data_out<4>>.
+    Found 1-bit register for signal <dev_mem_data_out<3>>.
+    Found 1-bit register for signal <dev_mem_data_out<2>>.
+    Found 1-bit register for signal <dev_mem_data_out<1>>.
+    Found 1-bit register for signal <dev_mem_data_out<0>>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | rst (negative)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    WARNING:Xst:2404 -  FFs/Latches <dev_mem_addr<31:29>> (without init value) have a constant value of 0 in block <MMU>.
+    Summary:
+	inferred  62 D-type flip-flop(s).
+	inferred  35 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <MMU> synthesized.
+
+Synthesizing Unit <serial_port>.
+    Related source file is "D:\study\simplemips1.1\serial_port.v".
+        CLK_FREQ = 20000000
+INFO:Xst:3210 - "D:\study\simplemips1.1\serial_port.v" line 45: Output port <RxD_waiting_data> of the instance <urecv> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <data_out>.
+    Found 1-bit register for signal <int_req>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <serial_port> synthesized.
+
+Synthesizing Unit <uart_async_transmitter>.
+    Related source file is "D:\study\simplemips1.1\uart_async.v".
+        ClkFrequency = 20000000
+        Baud = 115200
+    Found 4-bit register for signal <TxD_state>.
+    Found 8-bit register for signal <TxD_shift>.
+    Found finite state machine <FSM_2> for signal <TxD_state>.
+    -----------------------------------------------------------------------
+    | States             | 12                                             |
+    | Transitions        | 24                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_async_transmitter> synthesized.
+
+Synthesizing Unit <BaudTickGen_1>.
+    Related source file is "D:\study\simplemips1.1\uart_async.v".
+        ClkFrequency = 20000000
+        Baud = 115200
+        Oversampling = 1
+    Found 17-bit register for signal <Acc>.
+    Found 17-bit adder for signal <n0007> created at line 230.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BaudTickGen_1> synthesized.
+
+Synthesizing Unit <uart_async_receiver>.
+    Related source file is "D:\study\simplemips1.1\uart_async.v".
+        ClkFrequency = 20000000
+        Baud = 115200
+        Oversampling = 8
+    Found 2-bit register for signal <Filter_cnt>.
+    Found 1-bit register for signal <RxD_bit>.
+    Found 3-bit register for signal <OversamplingCnt>.
+    Found 4-bit register for signal <RxD_state>.
+    Found 8-bit register for signal <RxD_data>.
+    Found 2-bit register for signal <RxD_sync>.
+    Found finite state machine <FSM_3> for signal <RxD_state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 32                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_GND_125_o_equal_2_o (positive)             |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit subtractor for signal <Filter_cnt[1]_GND_125_o_sub_8_OUT> created at line 135.
+    Found 2-bit adder for signal <Filter_cnt[1]_GND_125_o_add_4_OUT> created at line 133.
+    Found 3-bit adder for signal <OversamplingCnt[2]_GND_125_o_add_21_OUT> created at line 151.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_async_receiver> synthesized.
+
+Synthesizing Unit <BaudTickGen_2>.
+    Related source file is "D:\study\simplemips1.1\uart_async.v".
+        ClkFrequency = 20000000
+        Baud = 115200
+        Oversampling = 8
+    Found 17-bit register for signal <Acc>.
+    Found 17-bit adder for signal <GND_126_o_BUS_0793_mux_2_OUT> created at line 230.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+Unit <BaudTickGen_2> synthesized.
+
+Synthesizing Unit <RST_SYNC>.
+    Related source file is "D:\study\simplemips1.1\RST_SYNC.v".
+    Found 1-bit register for signal <rst_nr2>.
+    Found 1-bit register for signal <rst_nr1>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <RST_SYNC> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x3-bit single-port Read Only RAM                    : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 13
+ 17-bit adder                                          : 2
+ 2-bit addsub                                          : 1
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 5
+ 33-bit adder                                          : 1
+ 33-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+# Registers                                            : 76
+ 1-bit register                                        : 45
+ 1024-bit register                                     : 1
+ 17-bit register                                       : 2
+ 2-bit register                                        : 2
+ 29-bit register                                       : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 14
+ 4-bit register                                        : 1
+ 5-bit register                                        : 3
+ 8-bit register                                        : 5
+# Latches                                              : 32
+ 1-bit latch                                           : 32
+# Comparators                                          : 7
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 2
+ 4-bit comparator greater                              : 1
+ 5-bit comparator equal                                : 2
+# Multiplexers                                         : 192
+ 1-bit 2-to-1 multiplexer                              : 54
+ 16-bit 32-to-1 multiplexer                            : 1
+ 17-bit 2-to-1 multiplexer                             : 1
+ 21-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 9
+ 32-bit 2-to-1 multiplexer                             : 91
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 5-to-1 multiplexer                             : 1
+ 32-bit 7-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 3
+ 5-bit 2-to-1 multiplexer                              : 23
+ 64-bit 2-to-1 multiplexer                             : 2
+ 64-bit 7-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+# Tristates                                            : 64
+ 1-bit tristate buffer                                 : 64
+# FSMs                                                 : 4
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <dev_mem_addr_0> in Unit <XLXI_18> is equivalent to the following FF/Latch, which will be removed : <dev_mem_addr_1> 
+WARNING:Xst:1710 - FF/Latch <dev_mem_addr_0> (without init value) has a constant value of 0 in block <XLXI_18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ex_inst_16> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_17> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_18> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_19> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_20> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_21> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_22> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_23> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_24> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_25> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_26> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_27> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_28> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_29> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_30> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <ex_inst_31> of sequential type is unconnected in block <XLXI_7>.
+WARNING:Xst:2677 - Node <write_addr_latch_0> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_1> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_23> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_24> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_25> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_26> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_27> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_28> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_29> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_30> of sequential type is unconnected in block <XLXI_17>.
+WARNING:Xst:2677 - Node <write_addr_latch_31> of sequential type is unconnected in block <XLXI_17>.
+
+Synthesizing (advanced) Unit <ID>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0554> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 3-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(Inst_i<3:2>,Inst_i<5>,Inst_i<0:1>)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ID> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_async_receiver>.
+The following registers are absorbed into counter <OversamplingCnt>: 1 register on signal <OversamplingCnt>.
+The following registers are absorbed into counter <Filter_cnt>: 1 register on signal <Filter_cnt>.
+Unit <uart_async_receiver> synthesized (advanced).
+WARNING:Xst:2677 - Node <write_addr_latch_0> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_1> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_23> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_24> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_25> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_26> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_27> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_28> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_29> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_30> of sequential type is unconnected in block <phy_mem>.
+WARNING:Xst:2677 - Node <write_addr_latch_31> of sequential type is unconnected in block <phy_mem>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x3-bit single-port distributed Read Only RAM        : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 11
+ 17-bit adder                                          : 2
+ 32-bit adder                                          : 5
+ 33-bit adder                                          : 1
+ 33-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+# Counters                                             : 2
+ 2-bit updown counter                                  : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 1633
+ Flip-Flops                                            : 1633
+# Comparators                                          : 7
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 2
+ 4-bit comparator greater                              : 1
+ 5-bit comparator equal                                : 2
+# Multiplexers                                         : 191
+ 1-bit 2-to-1 multiplexer                              : 54
+ 16-bit 32-to-1 multiplexer                            : 1
+ 17-bit 2-to-1 multiplexer                             : 1
+ 21-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 91
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 5-to-1 multiplexer                             : 1
+ 32-bit 7-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 3
+ 5-bit 2-to-1 multiplexer                              : 23
+ 64-bit 2-to-1 multiplexer                             : 2
+ 64-bit 7-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 4
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 2
+# FSMs                                                 : 4
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <dev_mem_addr_0> (without init value) has a constant value of 0 in block <MMU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <dev_mem_addr_1> (without init value) has a constant value of 0 in block <MMU>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_19/utrans/FSM_2> on signal <TxD_state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0100  | 0100
+ 0011  | 0011
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+ 1111  | 1111
+ 0010  | 0010
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_19/urecv/FSM_3> on signal <RxD_state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+ 1111  | 1111
+ 0010  | 0010
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_18/FSM_1> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 10    | 10
+ 01    | 01
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_17/FSM_0> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+-------------------
+WARNING:Xst:2677 - Node <Acc_0> of sequential type is unconnected in block <BaudTickGen_2>.
+WARNING:Xst:2677 - Node <Acc_1> of sequential type is unconnected in block <BaudTickGen_2>.
+WARNING:Xst:2677 - Node <Mmult_reg1_i[31]_reg2_i[31]_MuLt_99_OUT3> of sequential type is unconnected in block <EX>.
+INFO:Xst:1901 - Instance XLXI_16/instance_name/pll_base_inst in unit XLXI_16/instance_name/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+
+Optimizing unit <BaudTickGen_2> ...
+
+Optimizing unit <simplemipst> ...
+
+Optimizing unit <Reg> ...
+
+Optimizing unit <serial_port> ...
+
+Optimizing unit <uart_async_transmitter> ...
+
+Optimizing unit <BaudTickGen_1> ...
+
+Optimizing unit <uart_async_receiver> ...
+
+Optimizing unit <ID> ...
+
+Optimizing unit <PC> ...
+
+Optimizing unit <IF_ID> ...
+
+Optimizing unit <ID_EX> ...
+
+Optimizing unit <EX_MEM> ...
+
+Optimizing unit <MEM_WB> ...
+
+Optimizing unit <MMU> ...
+
+Optimizing unit <MEM> ...
+
+Optimizing unit <EX> ...
+WARNING:Xst:1710 - FF/Latch <XLXI_7/ex_aluop_7> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_7/ex_aluop_6> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_10/mem_aluop_7> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_10/mem_aluop_6> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <XLXI_7/in_delay_o> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/next_delay_o> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_31> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_30> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_29> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_28> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_27> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_26> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_25> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_24> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_23> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_22> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_21> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_20> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_19> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_18> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_17> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_7/ex_inst_16> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_10/mem_mem_addr_31> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_10/mem_mem_addr_30> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:2677 - Node <XLXI_10/mem_mem_addr_29> of sequential type is unconnected in block <simplemipst>.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_992> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_993> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_994> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_995> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_996> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_997> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_998> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_999> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1000> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1001> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1002> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1003> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1004> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1005> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1006> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1007> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1008> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1009> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1010> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1011> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1012> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1013> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1014> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1015> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1016> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1017> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1018> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1019> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1020> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1021> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1022> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_6/regs_31_1023> (without init value) has a constant value of 0 in block <simplemipst>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block simplemipst, actual ratio is 6.
+FlipFlop XLXI_20/rst_nr2 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_0 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_1 has been replicated 4 time(s)
+FlipFlop XLXI_4/id_inst_2 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_26 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_27 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_28 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_29 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_3 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_30 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_31 has been replicated 2 time(s)
+FlipFlop XLXI_4/id_inst_4 has been replicated 1 time(s)
+FlipFlop XLXI_4/id_inst_5 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1616
+ Flip-Flops                                            : 1616
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : simplemipst.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 4006
+#      GND                         : 1
+#      INV                         : 20
+#      LUT1                        : 76
+#      LUT2                        : 152
+#      LUT3                        : 1162
+#      LUT4                        : 245
+#      LUT5                        : 291
+#      LUT6                        : 1475
+#      MUXCY                       : 252
+#      MUXF7                       : 117
+#      VCC                         : 1
+#      XORCY                       : 214
+# FlipFlops/Latches                : 1648
+#      FD                          : 36
+#      FDC                         : 382
+#      FDC_1                       : 66
+#      FDE                         : 17
+#      FDE_1                       : 89
+#      FDP                         : 13
+#      FDR                         : 5
+#      FDR_1                       : 1
+#      FDRE                        : 1003
+#      FDSE                        : 4
+#      LDC                         : 32
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 135
+#      IBUF                        : 7
+#      IBUFG                       : 1
+#      IOBUF                       : 64
+#      OBUF                        : 63
+# DSPs                             : 3
+#      DSP48A1                     : 3
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx100fgg676-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1648  out of  126576     1%  
+ Number of Slice LUTs:                 3421  out of  63288     5%  
+    Number used as Logic:              3421  out of  63288     5%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   4549
+   Number with an unused Flip Flop:    2901  out of   4549    63%  
+   Number with an unused LUT:          1128  out of   4549    24%  
+   Number of fully used LUT-FF pairs:   520  out of   4549    11%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                         136
+ Number of bonded IOBs:                 135  out of    480    28%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of DSP48A1s:                      3  out of    180     1%  
+ Number of PLL_ADVs:                      1  out of      6    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------------------+----------------------------+-------+
+Clock Signal                                                                           | Clock buffer(FF name)      | Load  |
+---------------------------------------------------------------------------------------+----------------------------+-------+
+XLXI_16/instance_name/pll_base_inst/CLKOUT2                                            | BUFG                       | 1449  |
+XLXI_16/instance_name/pll_base_inst/CLKOUT1                                            | BUFG                       | 94    |
+XLXI_16/instance_name/pll_base_inst/CLKOUT0                                            | BUFG                       | 73    |
+XLXI_15/aluop_i[7]_reg2_i[31]_Select_34_o(XLXI_15/aluop_i[7]_reg2_i[31]_Select_34_o1:O)| BUFG(*)(XLXI_15/moveout_31)| 32    |
+---------------------------------------------------------------------------------------+----------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 16.856ns (Maximum Frequency: 59.326MHz)
+   Minimum input arrival time before clock: 4.486ns
+   Maximum output required time after clock: 7.147ns
+   Maximum combinational path delay: 9.312ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT2'
+  Clock period: 16.856ns (frequency: 59.326MHz)
+  Total number of paths / destination ports: 10878206 / 3828
+-------------------------------------------------------------------------
+Delay:               16.856ns (Levels of Logic = 13)
+  Source:            XLXI_4/id_inst_31_1 (FF)
+  Destination:       XLXI_1/pc_16 (FF)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT2 rising
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT2 rising
+
+  Data Path: XLXI_4/id_inst_31_1 to XLXI_1/pc_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.042  XLXI_4/id_inst_31_1 (XLXI_4/id_inst_31_1)
+     LUT4:I0->O            8   0.254   1.172  XLXI_5/_n160811 (XLXI_5/_n16081)
+     LUT6:I3->O           15   0.235   1.155  XLXI_5/Mmux_Reg1_addr_o1034_1 (XLXI_5/Mmux_Reg1_addr_o1034)
+     LUT4:I3->O           19   0.254   1.261  XLXI_5/Mmux_Reg1_addr_o101_1 (XLXI_5/Mmux_Reg1_addr_o101)
+     LUT5:I4->O            3   0.254   0.874  XLXI_6/raddr1[4]_re1_AND_118_o2 (XLXI_6/raddr1[4]_re1_AND_118_o2)
+     LUT6:I4->O            8   0.250   1.052  XLXI_6/raddr1[4]_re1_AND_118_o3_1 (XLXI_6/raddr1[4]_re1_AND_118_o3)
+     LUT6:I4->O            2   0.250   0.726  XLXI_6/Mmux_rdata1231 (XLXN_14<2>)
+     LUT6:I5->O            3   0.254   1.221  XLXI_5/Mmux_Reg1_o231 (XLXN_56<2>)
+     LUT6:I0->O            1   0.254   1.112  XLXI_5/n00692 (XLXI_5/n00692)
+     LUT6:I1->O            2   0.254   0.726  XLXI_5/n00697 (XLXI_5/n0069)
+     LUT5:I4->O            4   0.254   0.804  XLXI_5/Mmux_Reg1_o110221 (XLXI_5/Mmux_Reg1_o11022)
+     LUT6:I5->O           15   0.254   1.155  XLXI_5/Mmux_Reg1_o11012 (XLXI_5/Mmux_Reg1_o11012)
+     LUT5:I4->O            1   0.254   0.682  XLXI_1/Mmux_pc_next82 (XLXI_1/Mmux_pc_next81)
+     LUT3:I2->O            1   0.254   0.000  XLXI_1/Mmux_pc_next83 (XLXI_1/pc_next<16>)
+     FDC:D                     0.074          XLXI_1/pc_16
+    ----------------------------------------
+    Total                     16.856ns (3.874ns logic, 12.982ns route)
+                                       (23.0% logic, 77.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT1'
+  Clock period: 6.675ns (frequency: 149.817MHz)
+  Total number of paths / destination ports: 325 / 96
+-------------------------------------------------------------------------
+Delay:               6.675ns (Levels of Logic = 4)
+  Source:            XLXI_17/state_FSM_FFd1 (FF)
+  Destination:       XLXI_17/data_out_17 (FF)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT1 falling
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT1 falling
+
+  Data Path: XLXI_17/state_FSM_FFd1 to XLXI_17/data_out_17
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q           32   0.525   1.748  XLXI_17/state_FSM_FFd1 (XLXI_17/state_FSM_FFd1)
+     LUT4:I1->O           33   0.235   1.967  XLXI_17/Mmux_ram_addr131 (XLXN_248_OBUF)
+     LUT6:I1->O            1   0.254   0.682  XLXI_17/_n2162<17>3_SW0 (N404)
+     LUT6:I5->O            1   0.254   0.682  XLXI_17/_n2162<17>3 (XLXI_17/_n2162<17>3)
+     LUT6:I5->O            1   0.254   0.000  XLXI_17/_n2162<17>4 (XLXI_17/_n2162<17>)
+     FDC_1:D                   0.074          XLXI_17/data_out_17
+    ----------------------------------------
+    Total                      6.675ns (1.596ns logic, 5.079ns route)
+                                       (23.9% logic, 76.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT0'
+  Clock period: 5.170ns (frequency: 193.424MHz)
+  Total number of paths / destination ports: 600 / 104
+-------------------------------------------------------------------------
+Delay:               5.170ns (Levels of Logic = 3)
+  Source:            XLXI_19/urecv/OversamplingCnt_1 (FF)
+  Destination:       XLXI_19/data_out_7 (FF)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT0 rising
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT0 rising
+
+  Data Path: XLXI_19/urecv/OversamplingCnt_1 to XLXI_19/data_out_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.525   1.080  XLXI_19/urecv/OversamplingCnt_1 (XLXI_19/urecv/OversamplingCnt_1)
+     LUT4:I0->O            6   0.254   0.876  XLXI_19/urecv/RxD_state_FSM_FFd4-In21 (XLXI_19/urecv/RxD_state_FSM_FFd4-In2)
+     LUT6:I5->O            1   0.254   0.682  XLXI_19/_n0027_inv11 (XLXI_19/_n0027_inv1)
+     LUT2:I1->O            8   0.254   0.943  XLXI_19/_n0027_inv2 (XLXI_19/_n0027_inv)
+     FDE:CE                    0.302          XLXI_19/data_out_0
+    ----------------------------------------
+    Total                      5.170ns (1.589ns logic, 3.581ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              3.526ns (Levels of Logic = 2)
+  Source:            XLXN_257 (PAD)
+  Destination:       XLXI_20/rst_nr2 (FF)
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT2 rising
+
+  Data Path: XLXN_257 to XLXI_20/rst_nr2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  XLXN_257_IBUF (XLXN_257_IBUF)
+     INV:I->O              4   0.255   0.803  XLXI_20/rst_in_inv1_INV_0 (XLXI_20/rst_in_inv)
+     FDC:CLR                   0.459          XLXI_20/rst_nr1
+    ----------------------------------------
+    Total                      3.526ns (2.042ns logic, 1.484ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 64 / 32
+-------------------------------------------------------------------------
+Offset:              4.486ns (Levels of Logic = 4)
+  Source:            XLXN_254<17> (PAD)
+  Destination:       XLXI_17/data_out_17 (FF)
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT1 falling
+
+  Data Path: XLXN_254<17> to XLXI_17/data_out_17
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           1   1.328   0.958  XLXN_254_17_IOBUF (N80)
+     LUT6:I2->O            1   0.254   0.682  XLXI_17/_n2162<17>3_SW0 (N404)
+     LUT6:I5->O            1   0.254   0.682  XLXI_17/_n2162<17>3 (XLXI_17/_n2162<17>3)
+     LUT6:I5->O            1   0.254   0.000  XLXI_17/_n2162<17>4 (XLXI_17/_n2162<17>)
+     FDC_1:D                   0.074          XLXI_17/data_out_17
+    ----------------------------------------
+    Total                      4.486ns (2.164ns logic, 2.322ns route)
+                                       (48.2% logic, 51.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            XLXN_244 (PAD)
+  Destination:       XLXI_19/urecv/RxD_sync_0 (FF)
+  Destination Clock: XLXI_16/instance_name/pll_base_inst/CLKOUT0 rising
+
+  Data Path: XLXN_244 to XLXI_19/urecv/RxD_sync_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  XLXN_244_IBUF (XLXN_244_IBUF)
+     FDSE:D                    0.074          XLXI_19/urecv/RxD_sync_0
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT2'
+  Total number of paths / destination ports: 604 / 124
+-------------------------------------------------------------------------
+Offset:              6.839ns (Levels of Logic = 4)
+  Source:            XLXI_6/regs_31_175 (FF)
+  Destination:       XLXN_262<15> (PAD)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT2 rising
+
+  Data Path: XLXI_6/regs_31_175 to XLXN_262<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.525   1.080  XLXI_6/regs_31_175 (XLXI_6/regs_31_175)
+     LUT6:I2->O            1   0.254   0.958  XLXI_6/Mmux_led_output_819 (XLXI_6/Mmux_led_output_819)
+     LUT6:I2->O            1   0.254   0.000  XLXI_6/Mmux_led_output_36 (XLXI_6/Mmux_led_output_36)
+     MUXF7:I1->O           1   0.175   0.681  XLXI_6/Mmux_led_output_2_f7_5 (XLXN_262_15_OBUF)
+     OBUF:I->O                 2.912          XLXN_262_15_OBUF (XLXN_262<15>)
+    ----------------------------------------
+    Total                      6.839ns (4.120ns logic, 2.719ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 336 / 110
+-------------------------------------------------------------------------
+Offset:              7.147ns (Levels of Logic = 3)
+  Source:            XLXI_17/state_FSM_FFd2 (FF)
+  Destination:       XLXN_250 (PAD)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT1 falling
+
+  Data Path: XLXI_17/state_FSM_FFd2 to XLXN_250
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q           36   0.525   1.695  XLXI_17/state_FSM_FFd2 (XLXI_17/state_FSM_FFd2)
+     LUT2:I0->O            2   0.250   0.834  XLXI_17/state_ram_oe1 (XLXI_17/ram_oe)
+     LUT6:I4->O            1   0.250   0.681  XLXI_17/extram_we1 (XLXN_250_OBUF)
+     OBUF:I->O                 2.912          XLXN_250_OBUF (XLXN_250)
+    ----------------------------------------
+    Total                      7.147ns (3.937ns logic, 3.210ns route)
+                                       (55.1% logic, 44.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_16/instance_name/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 5 / 1
+-------------------------------------------------------------------------
+Offset:              6.305ns (Levels of Logic = 2)
+  Source:            XLXI_19/utrans/TxD_state_FSM_FFd1 (FF)
+  Destination:       XLXN_243 (PAD)
+  Source Clock:      XLXI_16/instance_name/pll_base_inst/CLKOUT0 rising
+
+  Data Path: XLXI_19/utrans/TxD_state_FSM_FFd1 to XLXN_243
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              31   0.525   1.933  XLXI_19/utrans/TxD_state_FSM_FFd1 (XLXI_19/utrans/TxD_state_FSM_FFd1)
+     LUT5:I0->O            1   0.254   0.681  XLXI_19/utrans/TxD1 (XLXN_243_OBUF)
+     OBUF:I->O                 2.912          XLXN_243_OBUF (XLXN_243)
+    ----------------------------------------
+    Total                      6.305ns (3.691ns logic, 2.614ns route)
+                                       (58.5% logic, 41.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 336 / 16
+-------------------------------------------------------------------------
+Delay:               9.312ns (Levels of Logic = 5)
+  Source:            XLXN_261<1> (PAD)
+  Destination:       XLXN_262<15> (PAD)
+
+  Data Path: XLXN_261<1> to XLXN_262<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           128   1.328   2.750  XLXN_261_1_IBUF (XLXN_261_1_IBUF)
+     LUT6:I0->O            1   0.254   0.958  XLXI_6/Mmux_led_output_81 (XLXI_6/Mmux_led_output_81)
+     LUT6:I2->O            1   0.254   0.000  XLXI_6/Mmux_led_output_3 (XLXI_6/Mmux_led_output_3)
+     MUXF7:I1->O           1   0.175   0.681  XLXI_6/Mmux_led_output_2_f7 (XLXN_262_0_OBUF)
+     OBUF:I->O                 2.912          XLXN_262_0_OBUF (XLXN_262<0>)
+    ----------------------------------------
+    Total                      9.312ns (4.923ns logic, 4.389ns route)
+                                       (52.9% logic, 47.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock XLXI_15/aluop_i[7]_reg2_i[31]_Select_34_o
+-------------------------------------------+---------+---------+---------+---------+
+                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------+---------+---------+---------+---------+
+XLXI_16/instance_name/pll_base_inst/CLKOUT2|         |         |    6.408|         |
+-------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_16/instance_name/pll_base_inst/CLKOUT0
+-------------------------------------------+---------+---------+---------+---------+
+                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------+---------+---------+---------+---------+
+XLXI_16/instance_name/pll_base_inst/CLKOUT0|    5.170|         |         |         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT1|         |    4.116|         |         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT2|    6.408|         |         |         |
+-------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_16/instance_name/pll_base_inst/CLKOUT1
+-------------------------------------------+---------+---------+---------+---------+
+                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------+---------+---------+---------+---------+
+XLXI_16/instance_name/pll_base_inst/CLKOUT0|         |         |    4.951|         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT1|         |         |    6.675|         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT2|         |         |   12.544|         |
+-------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_16/instance_name/pll_base_inst/CLKOUT2
+-------------------------------------------+---------+---------+---------+---------+
+                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------+---------+---------+---------+---------+
+XLXI_15/aluop_i[7]_reg2_i[31]_Select_34_o  |         |    3.923|         |         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT1|         |    1.972|         |         |
+XLXI_16/instance_name/pll_base_inst/CLKOUT2|   16.856|         |    7.216|         |
+-------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.28 secs
+ 
 --> 
 
-Total memory usage is 206884 kilobytes
+Total memory usage is 259272 kilobytes
 
-Number of errors   :    2 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  143 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

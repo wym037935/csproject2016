@@ -80,7 +80,7 @@ wire [31:0] PC_8;
 assign PC_8=PC_i+8;
 
 wire [31:0] JUMP_ADDR_26;
-assign JUMP_ADDR_26={PC_4[31:28], Inst_i[25:0], 2'b00};
+assign JUMP_ADDR_26={PC_i[31:28], Inst_i[25:0], 2'b00};
 
 wire [31:0] JUMP_ADDR_16;
 assign JUMP_ADDR_16=(PC_i+4)+{{14{Inst_i[15]}}, Inst_i[15:0], 2'b00};

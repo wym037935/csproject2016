@@ -142,10 +142,10 @@ module phy_mem(
 		else 
 		case ({addr_is_ram, addr_is_com_data, addr_is_com_stat,
 				 addr_is_rom})
-			5'b1000: data_out <= ram_selector ? extram_data : baseram_data;
-			5'b0100: data_out <= {24'b0, com_data_in};
-			5'b0010: data_out <= {30'b0, com_read_ready, com_write_ready};
-			5'b00001: data_out <= rom_data;
+			4'b1000: data_out <= ram_selector ? extram_data : baseram_data;
+			4'b0100: data_out <= {24'b0, com_data_in};
+			4'b0010: data_out <= {30'b0, com_read_ready, com_write_ready};
+			4'b0001: data_out <= rom_data;
 		endcase
 	end
 
@@ -173,8 +173,8 @@ module phy_mem(
 				write_data_latch <= data_in;
 				write_cnt <= 0;
 				case ({addr_is_ram, addr_is_com_data})
-					3'b10: state <= WRITE_RAM;
-					3'b01: enable_com_write <= 1;
+					2'b10: state <= WRITE_RAM;
+					2'b01: enable_com_write <= 1;
 				endcase
 			end
 			WRITE_RAM: begin

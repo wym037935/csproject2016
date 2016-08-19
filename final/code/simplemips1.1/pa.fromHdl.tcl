@@ -5,7 +5,16 @@ create_project -name simplemips1.1 -dir "D:/study/simplemips1.1/planAhead_run_2"
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "simplemipst.ucf" [current_fileset -constrset]
+set hdlfile [add_files [list {ipcore_dir/clockpll.v}]]
+set_property file_type Verilog $hdlfile
+set_property library work $hdlfile
+set hdlfile [add_files [list {uart_async.v}]]
+set_property file_type Verilog $hdlfile
+set_property library work $hdlfile
 set hdlfile [add_files [list {serial_port.v}]]
+set_property file_type Verilog $hdlfile
+set_property library work $hdlfile
+set hdlfile [add_files [list {RST_SYNC.v}]]
 set_property file_type Verilog $hdlfile
 set_property library work $hdlfile
 set hdlfile [add_files [list {Reg.v}]]
