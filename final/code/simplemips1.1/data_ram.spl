@@ -1,0 +1,9 @@
+[Inputs]
+clk
+ce
+we
+[Outputs]
+[BiDir]
+[ATTRIBUTES]
+VeriModel data_ram
+

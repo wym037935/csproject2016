@@ -1,0 +1,38 @@
+\section{流水线设计}
+	\subsection{取指阶段}
+	\begin{itemize}
+		\item PC 模块：给出指令地址， 其中实现指令寄存器 PC，该寄存器的值就是指令地址。
+		\item IF/ID模块：实现取指不译码阶段之间的寄存器，将取指阶段的结果在下一个时钟传递到译码阶段。
+	\end{itemize}
+	
+	
+	\subsection{译码阶段}
+	\begin{itemize}
+		\item ID 模块：对指令进行译码，译码结果包括运算类型、运算所需的源操作数、要写入的目的寄存器等。
+		\item Regfile 模块：实现了 32 个 32 位通用寄存器，可以同时进行两个寄存器的读操作和一个寄存器的写操作。
+		\item ID/EX 模块：实现译码不执行阶段之间的寄存器，将译码阶段的结果在下一个时钟周期传递到执行阶段。
+	\end{itemize}
+	
+	
+	\subsection{执行阶段}
+	\begin{itemize}
+		\item EX 模块：依据译码阶段的结果，进行指定的运算，给出运算结果。
+		\item EX/MEM 模块：实现执行不访存阶段之间的寄存器，将执行阶段的结果在下一个时钟周期传递到访存阶段。
+	\end{itemize}
+	
+	
+	\subsection{访存阶段}
+	\begin{itemize}
+		\item MEM 模块：如果是加载、存储指令，那么会对数据存储器进行访问。
+		\item MEM/WB 模块：实现访存不回写阶段之间的寄存器，将访存阶段的结果在下一个时钟周期传递到回写阶段。
+	\end{itemize}
+
+
+	\subsection{回写阶段}
+	\begin{itemize}
+		\item HILO 模块：实现寄存器 HI、LO，在乘法指令的处理过程中会使用到这两个寄存器。
+	\end{itemize}
+	
+	
+\section{冲突问题}
+	因为时间等因素，没有考虑冲突的问题，只是在fibonacci数列计算的程序中可能出现冲突的两条指令之间加上了4条NOP语句。

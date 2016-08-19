@@ -1,0 +1,22 @@
+[Inputs]
+rst
+wreg_i
+=wd_i[4:0]=
+=wdata_i[31:0]=
+=mem_addr_i[31:0]=
+=ALUOp_i[7:0]=
+=reg2_i[31:0]=
+=mem_data_i[31:0]=
+[Outputs]
+wreg_o
+mem_we_o
+mem_ce_o
+=wd_o[4:0]=
+=wdata_o[31:0]=
+=mem_addr_o[31:0]=
+=mem_sel_o[3:0]=
+=mem_data_o[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel MEM
+

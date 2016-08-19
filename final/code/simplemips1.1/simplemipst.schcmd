@@ -1,0 +1,16 @@
+add autowire 6400 640 5936 1888 8 -sn=1
+add autowire 6400 576 5936 2272 8 -sn=1
+select figure at 6115 1955 8 -branches -sn=1
+select figure at 6607 1486 8 -branches -sn=1
+select figure at 6470 1381 8 -branches -sn=1
+add autowire 6464 1376 5984 384 8 -sn=1
+add autowire 6464 1824 5984 448 8 -sn=1
+add autowire 6464 2144 5984 576 8 -sn=1
+select figure at 6706 1442 8 -branches -sn=1
+select figure at 6630 1459 8 -branches -sn=1
+select figure at 6711 1440 8 -branches -sn=1
+select figure at 6718 1396 8 -branches -sn=1
+select figure at 6690 1368 8 -branches -sn=1
+select figure at 6849 1415 8 -branches -sn=1
+select figure at 6677 1476 8 -branches -sn=1
+select figure at 6731 1388 8 -branches -sn=1

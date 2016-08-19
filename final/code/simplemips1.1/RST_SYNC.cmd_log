@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/RST_SYNC.v -lang verilog -prj simplemips1.1 -o RST_SYNC.spl -module RST_SYNC -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 RST_SYNC.spl D:/study/simplemips1.1/RST_SYNC.sym 

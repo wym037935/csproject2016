@@ -1,0 +1,192 @@
+\section{模块接口}
+	\subsection{PC模块}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		接口名&宽度&输入/输出&作用\\
+		\hline
+		rst &1& 输入& 复位信号\\
+		\hline
+		clk &1& 输入& 时钟信号\\
+		\hline
+		pc &32& 输出& 要读取的指令地址\\
+		\hline
+		ce &1& 输出& 指令存储器使能信号\\
+		\hline
+		branch{\_}flag{\_}i& 1& 输入& 是否转移\\
+		\hline
+		branch{\_}target{\_}address{\_}i& 32& 输入& 转移地址\\
+		\hline
+		new{\_}pc& 32& 输入& 要读取的指令地址\\
+		\hline
+		\end{tabular}
+	\end{table}
+
+	\subsection{Regfile模块}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		接口名&宽度&输入/输出&作用\\
+		\hline
+		rst &1& 输入& 复位信号\\
+		\hline
+		clk &1& 输入& 时钟信号\\
+		\hline
+		waddr& 32& 输出& 要写入的寄存器地址\\
+		\hline
+		wdata& 1& 输出& 要写入的数据\\
+		\hline
+		we& 1& 输入& 写使能信号\\
+		\hline
+		raddr1& 5& 输入& 第一个读端口地址\\
+		\hline
+		re1& 1& 输入& 以一个读端口使能信号\\
+		\hline
+		rdata1& 32& 输出& 第一个读端口的值\\
+		\hline
+		raddr2& 5& 输入& 第二个读端口地址\\
+		\hline
+		re2& 1& 输入& 以二个读端口使能信号\\
+		\hline
+		rdata2& 32& 输出& 第二个读端口的值\\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	\subsection{ID模块}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		接口名&宽度&输入/输出&作用\\
+		\hline
+		rst &1& 输入& 复位信号\\
+		\hline
+		pc{\_}i& 32& 输入& 指令地址\\
+		\hline
+		inst{\_}i& 32& 输入& 译码阶段指令\\
+		\hline
+		reg1{\_}data{\_}i& 32& 输入& 第一个读端口输入\\
+		\hline
+		reg2{\_}data{\_}i& 32& 输入& 第二个读端口输入\\
+		\hline
+		reg1{\_}read{\_}o& 1& 输出& 第一个读端口使能信号\\
+		\hline
+		reg2{\_}read{\_}o& 1& 输出& 第二个读端口使能信号\\
+		\hline
+		reg1{\_}addr{\_}o& 5& 输出& 第一个读端口地址\\
+		\hline
+		reg2{\_}addr{\_}o& 5& 输出& 第二个读端口地址\\
+		\hline
+		aluop{\_}o& 8& 输出& 运算子类型\\
+		\hline
+		alusel{\_}o& 3& 输出& 运算类型\\
+		\hline
+		reg1{\_}o &32 &输出 &源操作数1\\
+		\hline
+		reg2{\_}o &32 &输出 &源操作数2\\
+		\hline
+		wd{\_}o& 5& 输出& 目的寄存器地址\\
+		\hline
+		wreg{\_}o& 1& 输出& 是否需要写入目的寄存器\\
+		\hline
+		ex{\_}wreg{\_}i& 1& 输入& 处于执行阶段指令是否写\\
+		\hline
+		ex{\_}wd{\_}i& 5& 输入& 处于执行阶段指令写地址\\
+		\hline
+		ex{\_}wdata{\_}i& 32& 输入& 处于执行阶段指令写数据\\
+		\hline
+		mem{\_}wreg{\_}i& 1& 输入& 处于访存阶段指令是否写\\
+		\hline
+		mem{\_}wd{\_}i& 5& 输入& 处于访存阶段指令写地址\\
+		\hline
+		mem{\_}wdata{\_}i& 32& 输入& 处于访存阶段指令写数据\\
+		\hline
+		branch{\_}flag{\_}o &1& 输出& 是否转移\\
+		\hline
+		branch{\_}target{\_}address{\_}o& 32& 输出& 转移目标地址\\
+		\hline
+		is{\_}in{\_}delayslot{\_}o &1& 输出& 当前指令是否位于延迟槽\\
+		\hline
+		link{\_}addr{\_}o &32 &输出& 返回地址\\
+		\hline
+		next{\_}inst{\_}in{\_}delayslot{\_}o &1 &输出& 下一跳指令是否位于延迟槽\\
+		\hline
+		is{\_}in{\_}delayslot{\_}i &1 &输入 &当前指令是否位于延迟槽\\
+		\hline
+		\end{tabular}
+	\end{table}
+
+\newpage
+	\subsection{EX模块}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		接口名&宽度&输入/输出&作用\\
+		\hline
+		rst &1& 输入& 复位信号\\
+		\hline
+		aluop{\_}i& 8& 输入& 运算子类型\\
+		\hline
+		alusel{\_}i& 3& 输入& 运算类型\\
+		\hline
+		reg1{\_}i &32 &输入 &源操作数1\\
+		\hline
+		reg2{\_}i &32 &输入 &源操作数2\\
+		\hline
+		wd{\_}i& 5& 输入& 目的寄存器地址\\
+		\hline
+		wreg{\_}i& 1& 输入& 是否需要写入目的寄存器\\
+		\hline
+		wd{\_}o& 5& 输出& 目的寄存器地址\\
+		\hline
+		wreg{\_}o& 1& 输出& 是否需要写入目的寄存器\\
+		\hline
+		wdata{\_}o& 32& 输出& 写入目的寄存器的值\\
+		\hline
+		is{\_}indelayslot{\_}i& 1& 输出& 是否位于延迟槽\\
+		\hline
+		link{\_}address{\_}i &32& 输出& 返回地址\\
+		\hline
+		mem{\_}addr{\_}o& 32& 输出& 加载/存储地址\\
+		\hline
+		reg2{\_}o& 32& 输出& 要存的数据\\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection{MEM模块}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		接口名&宽度&输入/输出&作用\\
+		\hline
+		rst &1& 输入& 复位信号\\
+		\hline
+		wd{\_}i& 5& 输入& 目的寄存器地址\\
+		\hline
+		wreg{\_}i& 1& 输入& 是否需要写入目的寄存器\\
+		\hline
+		wdata{\_}i& 32& 输入& 目的寄存器的值\\
+		\hline
+		wd{\_}o& 5& 输出& 目的寄存器地址\\
+		\hline
+		wreg{\_}o& 1& 输出& 是否需要写入目的寄存器\\
+		\hline
+		wdata{\_}o& 32& 输出& 写入目的寄存器的值\\
+		\hline
+		reg2{\_}i &32 &输出 &要存储的数据\\
+		\hline
+		mem{\_}data{\_}i& 32& 输入& 读取的数据\\
+		\hline
+		mem{\_}addr{\_}i& 32& 输入& 加载/存储地址\\
+		\hline
+		is{\_}write& 1& 输出& 是否写ram\\
+		\hline
+		\end{tabular}
+	\end{table}

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/MEM.v -lang verilog -prj simplemips1.1 -o MEM.spl -module MEM -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 MEM.spl D:/study/simplemips1.1/MEM.sym 

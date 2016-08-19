@@ -1,0 +1,6 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/ID_EX.v -lang verilog -prj simplemips1.1 -o ID_EX.spl -module ID_EX -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 ID_EX.spl D:/study/simplemips1.1/ID_EX.sym 
+vhdtdtfi -lib work D:/study/simplemips1.1/ID_EX.v -lang verilog -prj simplemips1.1 -o ID_EX.spl -module ID_EX -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 ID_EX.spl D:/study/simplemips1.1/ID_EX.sym 
+vhdtdtfi -lib work D:/study/simplemips1.1/ID_EX.v -lang verilog -prj simplemips1.1 -o ID_EX.spl -module ID_EX -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 ID_EX.spl D:/study/simplemips1.1/ID_EX.sym 

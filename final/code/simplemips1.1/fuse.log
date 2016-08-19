@@ -1,0 +1,62 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/study/simplemips1.1/simplemipst_simplemipst_sch_tb_isim_beh.exe -prj D:/study/simplemips1.1/simplemipst_simplemipst_sch_tb_beh.prj work.simplemipst_simplemipst_sch_tb work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/study/simplemips1.1/ipcore_dir/clockpll.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/uart_async.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/serial_port.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/RST_SYNC.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/Reg.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/phy_mem.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/PC.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/MMU.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/MEM_WB.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/MEM.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/IF_ID.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/IF.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/ID_EX.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/ID.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/EX_MEM.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/EX.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/CPU.v" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/simplemipst.vf" into library work
+Analyzing Verilog file "D:/study/simplemips1.1/test_sim.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 156620 KB
+Fuse CPU Usage: 281 ms
+Compiling module PC
+Compiling module IF
+Compiling module IF_ID
+Compiling module ID
+Compiling module Reg
+Compiling module ID_EX
+Compiling module EX_MEM
+Compiling module MEM
+Compiling module MEM_WB
+Compiling module EX
+Compiling module IBUFG
+Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
+Compiling module PLL_BASE(CLKFBOUT_MULT=8,CLKIN_P...
+Compiling module BUFG
+Compiling module clockpll
+Compiling module CPU
+Compiling module phy_mem
+Compiling module MMU
+Compiling module BaudTickGen(ClkFrequency=2000000...
+Compiling module uart_async_transmitter(ClkFreque...
+Compiling module BaudTickGen(ClkFrequency=2000000...
+Compiling module uart_async_receiver(ClkFrequency...
+Compiling module serial_port
+Compiling module RST_SYNC
+Compiling module simplemipst
+Compiling module simplemipst_simplemipst_sch_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 27 Verilog Units
+Built simulation executable D:/study/simplemips1.1/simplemipst_simplemipst_sch_tb_isim_beh.exe
+Fuse Memory Usage: 172084 KB
+Fuse CPU Usage: 656 ms

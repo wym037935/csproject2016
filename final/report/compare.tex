@@ -1,0 +1,52 @@
+\section{指令对比}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|}
+		\hline
+		16位指令 & 32位对应指令 \\
+		\hline
+		ADDIU &\multirow{3}{*}{ADDIU} \\	
+		\cline{1-1}{ADDIU3} & \\	
+		\cline{1-1}{ADDSP} & \\
+		\hline
+		ADDU & ADDU\\
+		\hline
+		AND & AND\\
+		\hline
+		B & BEQ \\
+		\hline
+		BEQZ & XOR+BEQ \\
+		\hline
+		BNEZ & XOR+BNE \\
+		\hline
+		BTEQZ & XOR+BEQ \\
+		\hline
+		CMP & SLT+ADDU \\
+		\hline
+		JR & JR \\
+		\hline
+		LI & XOR+ADDIU\\
+		\hline
+		LW & \multirow{2}{*}{LW} \\	
+		\cline{1-1}{LW$\underline{\hbox to 2mm{}}$SP} & \\
+		\hline
+		MFIH & \multirow{4}{*}{XOR+ADDU} \\
+		\cline{1-1}{MFPC} & \\
+		\cline{1-1}{MTIH} & \\
+		\cline{1-1}{MTSP} & \\
+		NOP	& NOP \\
+		\hline
+		OR & OR \\
+		\hline
+		SLL & SLL \\
+		\hline
+		SRA & SRA \\
+		\hline		
+		SUBU & SUBU \\
+		\hline	
+		SW & \multirow{2}{*}{SW} \\	
+		\cline{1-1}{SW$\underline{\hbox to 2mm{}}$SP} & \\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage

@@ -1,0 +1,149 @@
+\documentclass[UTF8,fntef,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{savesym}
+\usepackage{amscd}
+\usepackage{latexsym}
+\usepackage{arydshln,multirow}
+\usepackage{listings} 
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{CJK}
+\makeatletter %使\section中的内容左对齐
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+  {1.5\baselineskip}{0.5\baselineskip}{\bf\leftline}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\makeatother
+\begin{document}
+\begin{CJK*}{UTF8}{kai}
+\title{\Large 计算机系统综合实验}
+\author{计33~ ~伍一鸣~ ~2012011347}
+\maketitle
+\tableofcontents
+\newpage
+\section{实验目标及完成情况}
+	\subsection{实验目标}
+	实现32位mips指令系统的五级流水线CPU，在CPU上运行监控程序。
+	\subsection{完成情况}
+	完成了32位mips指令系统的五级流水线CPU，未能运行监控程序，在CPU上运行了一个fibonacci数列计算的程序。
+	
+\section{项目分工}
+	\begin{itemize}
+	\item 设计数据通路和指令集：杜华峰，郭栋，伍一鸣
+	\item CPU代码实现与调试：杜华峰，郭栋
+	\item 监控程序的修改：伍一鸣
+	\item 所有文档撰写：伍一鸣
+	\end{itemize}
+\newpage
+
+\input{instructions.tex}
+
+\input{compare.tex}
+
+\section{数据通路}
+\includegraphics[width=5in]{datapath.jpg} 
+\newpage
+
+\input{design.tex}
+\newpage
+\input{interface.tex}
+\newpage
+\section{监控程序}
+
+后来目标有所修改，所以监控程序并未完成，比较有用的代码是按照原本16位term的方式打的两张32位的表。
+\begin{lstlisting}[language={C++},keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20}] 
+
+const AsmID RegsList[32]={
+	{"zero",0},
+	{"at",1},
+	{"v0",2},
+	{"v1",3},
+	{"a0",4},
+	{"a1",5},
+	{"a2",6},
+	{"a3",7},
+	{"t0",8},
+	{"t1",9},
+	{"t2",10},
+	{"t3",11},
+	{"t4",12},
+	{"t5",13},
+	{"t6",14},
+	{"t7",15},
+	{"s0",16},
+	{"s1",17},
+	{"s2",18},
+	{"s3",19},
+	{"s4",20},
+	{"s5",21},
+	{"s6",22},
+	{"s7",23},
+	{"t8",24},
+	{"t9",25},
+	{"k0",26},
+	{"k1",27},
+	{"gp",28},
+	{"sp",29},
+	{"fp",30},
+	{"ra",31},
+};
+
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[language={C++},keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20}] 
+const struct TASM const_asm[] = {
+    {"AND",0X3FFF824,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"OR",0X3FFF825,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"XOR",0X3FFF826,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"NOR",0X3FFF827,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    
+    {"ANDI",0X33FF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+    {"XORI",0X3BFF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+    {"LUI",0X3C1F0000,0XFFE0FFFF,0XFFFF0000,0XFFFFFFFF},
+    {"ORI",0X37FF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+
+    {"SLL",0X1FF800,0XFFE0FFFF,0XFFFF07FF,0XFFFFF83F},
+    {"SRL",0X1FF802,0XFFE0FFFF,0XFFFF07FF,0XFFFFF83F},
+    {"SRA",0X1FF802,0XFFE0FFFF,0XFFFF07FF,0XFFFFF83F},
+
+    {"SLLV",0X3FFF804,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"SRLV",0X3FFF806,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"SRAV",0X3FFF807,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+
+    {"MOVN",0X3FFF80B,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"MOVZ",0X3FFF80A,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+
+    {"ADDU",0X3FFF821,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"SUBU",0X3FFF823,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"SLT",0X3FFF82A,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+    {"SLTU",0X3FFF82B,0XFC1FFFFF,0XFFE0FFFF,0XFFFF07FF},
+
+    {"SLTI",0X281F0000,0XFFE0FFFF,0XFFFF0000,0XFFFFFFFF},
+    {"SLTIU",0X2CFF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+
+    {"JR",0X3E00008,0XFC1FFFFF,0XFFFFFFFF,0XFFFFFFFF},
+    {"JALR",0X3E00009,0XFC1FFFFF,0XFFFF07FF,0XFFFFFFFF},
+    {"J",0X10000000,0XFC000000,0X0XFFFFFFFF,0XFFFFFFFF},
+    {"JAL",0X18000000,0XFC000000,0X0XFFFFFFFF,0XFFFFFFFF},
+
+    {"BEQ",0X13FF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+    {"BNE",0X17FF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+
+    {"BGTZ",0X1FE00000,0XFC1FFFFF,0XFFFF0000,0XFFFFFFFF},
+    {"BLEZ",0X1BE00000,0XFC1FFFFF,0XFFFF0000,0XFFFFFFFF},
+
+    {"BGEZ",0X7E10000,0XFC1FFFFF,0XFFFF0000,0XFFFFFFFF},
+    {"BLTZ",0X7E00000,0XFC1FFFFF,0XFFFF0000,0XFFFFFFFF},
+
+    {"LW",0X8FFF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000},
+    {"SW",0XAFFF0000,0XFC1FFFFF,0XFFE0FFFF,0XFFFF0000}
+};
+\end{lstlisting}
+
+\section{收获与总结}
+	通过这次大作业的实践，让我们三个对于计算机组成原理的课程有了较为完整一次复习，对于计原的那些概念性的东西有了更深的理解。
+	
+	
+	在这次大作业的实践中让我们对于计划赶不上变化有了深刻的理解，以后在作计划的时候要一切往前并留出50\%的缓冲时间才能保证计划的顺利完成。
+\end{CJK*}
+\end{document}

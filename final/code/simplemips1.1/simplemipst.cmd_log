@@ -1,0 +1,11 @@
+sch2sym -intstyle ise -family spartan6 -refsym simplemipst D:/study/simplemips1.1/simplemipst.sch D:/study/simplemips1.1/simplemipst.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst_drc.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2verilog -intstyle ise -family spartan6 -tionly {} -tiext tfi -w D:/study/simplemips1.1/simplemipst.sch simplemipst.tfi 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst_drc.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst_drc.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst_drc.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog simplemipst.vf -w D:/study/simplemips1.1/simplemipst.sch 
+sch2verilog -intstyle ise -family spartan6 -tionly {} -tiext tfi -w D:/study/simplemips1.1/simplemipst.sch simplemipst.tfi 
+xst -intstyle ise -ifn "D:/study/simplemips1.1/simplemipst.xst" -ofn "D:/study/simplemips1.1/simplemipst.syr" 

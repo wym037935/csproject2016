@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/inst_rom.v -lang verilog -prj simplemips1.1 -o inst_rom.spl -module inst_rom -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 inst_rom.spl D:/study/simplemips1.1/inst_rom.sym 

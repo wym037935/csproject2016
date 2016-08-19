@@ -1,0 +1,22 @@
+[Inputs]
+rst
+wreg_i
+in_delay_i
+=inst_i[31:0]=
+=alusel_i[2:0]=
+=aluop_i[7:0]=
+=reg1_i[31:0]=
+=reg2_i[31:0]=
+=wd_i[4:0]=
+=link_addr_i[31:0]=
+[Outputs]
+wreg_o
+=mem_addr_o[31:0]=
+=wd_o[4:0]=
+=wdata_o[31:0]=
+=aluop_o[7:0]=
+=reg2_o[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel EX
+

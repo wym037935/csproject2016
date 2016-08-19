@@ -1,0 +1,20 @@
+[Inputs]
+clk
+rst
+ce
+we_i
+=sel[3:0]=
+=data_i[31:0]=
+=addr[31:0]=
+=addr_pc[31:0]=
+=dev_mem_data_in[31:0]=
+[Outputs]
+dev_mem_is_write
+=data_o[31:0]=
+=data_inst[31:0]=
+=dev_mem_addr[31:0]=
+=dev_mem_data_out[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel MMU
+

@@ -1,0 +1,12 @@
+[Inputs]
+clk
+rst
+=if_pc[31:0]=
+=if_inst[31:0]=
+[Outputs]
+=id_pc[31:0]=
+=id_inst[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel IF_ID
+

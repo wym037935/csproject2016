@@ -1,0 +1,13 @@
+[Inputs]
+clk_init
+rst_init
+rst_1
+[Outputs]
+clk
+rst
+clk_init_o
+clk_25M
+[BiDir]
+[ATTRIBUTES]
+VeriModel CPU
+

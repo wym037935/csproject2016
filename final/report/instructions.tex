@@ -1,0 +1,586 @@
+\section{指令机器码}
+rd,rs,rt均为寄存器
+\subsection{逻辑操作}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100100 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{AND rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$ R[s] \& R[t]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值相与后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100101 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{OR rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$ R[s] $|$ R[t]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值相或后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100110 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{XOR rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$ R[s] $\land$ R[t]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值相异或后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100111 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{NOR rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow \sim$(R[s] $|$ R[t])}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值或非后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001100 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{ANDI rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$  R[s] \& Zero-extend(immediate)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rs 的值与立即数零扩展后相与的结果保存至rt 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001110 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{XORI rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$  R[s] $\land$ Zero-extend(immediate)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rs 的值与立即数零扩展后相异或的结果保存至rt 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001111 & 00000 & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{LUI rt immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$   immediate * 65536}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 16 位立即数放至 rt 的高 16 位中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001101 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{ORI rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$  R[s] $|$ Zero-extend(immediate)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rs 与立即数 immediate 零扩展后相或的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+\subsection{移位操作}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & 00000 & rt & rd & immediate& 000000 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLL rd rt immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $<<$ immediate}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值左移立即数 immediate 位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & 00000 & rt & rd & immediate& 000010 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SRL rd rt immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $>>$ immediate(logical)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值逻辑右移立即数 immediate 位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & 00000 & rt & rd & immediate& 000011 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SRA rd rt immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $>>$ immediate(arithmetic)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值算术右移立即数 immediate 位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000& 000100 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLLV rd rt rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $<<$ R[s]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值左移 rs 位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000& 000110 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SRLV rd rt rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $>>$ R[s](logical)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值逻辑右移rs 位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000& 000111 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SRAV rd rt rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$  R[t] $>>$ R[s](arithmetic)}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将 rt 中的值算术右移rs位后的结果保存至 rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+\subsection{移动操作}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000& 001011 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{MOVN rd rt rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if rt $\neq$ 0 then rd $\leftarrow$ rs}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rt不为0，则将rs的值赋给rd}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000& 001010 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{MOVZ rd rt rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if rt = 0 then rd $\leftarrow$ rs}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rt为0，则将rs的值赋给rd}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+\subsection{算术操作}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100001 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{ADDU rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$ R[s] + R[t]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值相加后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 100011 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SUBU rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[d] $\leftarrow$ R[s] - R[t]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{将rs 与rt 的值相减后的结果保存至rd 中}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 101010 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLT rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if(R[s] $<$ R[t]) then R[d] = 1,else R[d] = 0}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{比较 rs 与 rt 的值并根据结果将 rd 赋值}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & rt & rd & 00000 & 101011 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLTU rd rs rt}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if(R[s] $<$ R[t]) then R[d] = 1,else R[d] = 0}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{比较 rs 与 rt 的无符号值并根据结果将 rd 赋值}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001001 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{ADDIU rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$ R[s] + (sign extended)immediate}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{对立即数immediate进行符号扩展后与rs的值求和，保存到rt中，不检查溢出}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001010 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLTI rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if( R[s] $<$ (sign extended)immediate )then R[t]=1,else R[t]=0}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{对立即数immediate进行符号扩展后与rs的值无符号比较并根据结果将 rt 赋值}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 001011 & rs & rt & \multicolumn{3}{|c|}{immediate} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SLTIU rt rs immediate}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if( R[s] $<$ (sign extended)immediate )then R[t]=1,else R[t]=0}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{对立即数immediate进行符号扩展后与rs的值有符号比较并根据结果将 rt 赋值}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+
+\subsection{转移指令}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & 00000 & 00000& 00000& 001000 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{JR rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{PC $\leftarrow$ R[s]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{无条件跳转至 rs 中所存地址执行}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & rs & 00000 & rd& 00000& 001001 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{JALR rd rs 或者JALR rs}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{PC $\leftarrow$ R[s], R[d] $\leftarrow$ RPC}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{\tabincell{c}{无条件跳转至 rs 中所存地址执行，将延时槽后一条指令\\的地址保存到 rd中作为返回地址，rd默认为\$31}}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000010 & \multicolumn{5}{|c|}{instr index} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{J target}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{PC $\leftarrow$ (PC+4)[31,28]$||$target*4}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{\tabincell{c}{跳转至新地址执行，新地址低28位为target乘以4的值，\\新地址高4位为PC+4的高4位}}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000011 & \multicolumn{5}{|c|}{instr index} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{JAL target}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{PC $\leftarrow$ (PC+4)[31,28]$||$target*4，\$31 $\leftarrow$ RPC}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{\tabincell{c}{跳转至新地址执行，新地址低28位为target乘以4的值，\\新地址高4位为PC+4的高4位,返回地址保存到\$31中}}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	
+	以上四条指令都要在转移之前先执行延迟槽指令
+\newpage
+
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000100 & rs & rt & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BEQ rs rt offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs = rt) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs等于rt则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+%	\begin{table}[!hbp]
+%		\centering
+%		\begin{tabular}{|c|c|c|c|c|c|c|}
+%		\hline
+%		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+%		\cline{2-7} & 000100 & 00000 & 00000 & \multicolumn{3}{|c|}{offset} \\
+%		\hline
+%		指令格式&\multicolumn{6}{|l|}{B offset}\\
+%		\hline		
+%		指令功能&\multicolumn{6}{|l|}{PC = PC+4+(signed extend(offset * 4))}\\
+%		\hline		
+%		功能说明&\multicolumn{6}{|l|}{无条件执行跳转操作}\\
+%		\hline
+%		\end{tabular}
+%	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000111 & rs & 00000 & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BGTZ rs offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs $>$ 0) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs大于0则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000110 & rs & 00000 & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BLEZ rs offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs $\leq$ 0) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs不大于0则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+%\newpage
+
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000101 & rs & rt & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BNE rs rt offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs $\neq$ rt) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs不等于rt则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000001 & rs & 00000 & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BLTZ rs offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs $<$ 0) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs小于0则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000001 & rs & 00001 & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{BLEZ rs offset}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{if (rs $\geq$ 0) then PC = PC+4+(signed extend(offset * 4))}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{若rs不小于0则执行跳转操作}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage
+\subsection{存储指令和空指令}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 100011 & base & rt & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{LW rt offset(base)}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\leftarrow$ MEM[signed extended(offset)+GPR[base]]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{从内存中指定的加载地址处，读取一个字，保存到rt中，要求地址对齐}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 101011 & base & rt & \multicolumn{3}{|c|}{offset} \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{SW rt offset(base)}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{R[t] $\rightarrow$ MEM[signed extended(offset)+GPR[base]]}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{从rt处读取一个字，保存到内存中指定的加载地址中，要求地址对齐}\\
+		\hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!hbp]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{指令编码} & 31-26&25-21 & 20-16&15-11 &10-6 &5-0\\
+		\cline{2-7} & 000000 & 00000 & 00000 & 00000& 00000& 000000 \\
+		\hline
+		指令格式&\multicolumn{6}{|l|}{NOP}\\
+		\hline		
+		指令功能&\multicolumn{6}{|l|}{无}\\
+		\hline		
+		功能说明&\multicolumn{6}{|l|}{空指令}\\
+		\hline
+		\end{tabular}
+	\end{table}
+\newpage

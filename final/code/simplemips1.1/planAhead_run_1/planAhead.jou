@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Jul 24 15:02:25 2016
+# Process ID: 620
+# Log file: D:/study/simplemips1.1/planAhead_run_1/planAhead.log
+# Journal file: D:/study/simplemips1.1/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/study/simplemips1.1/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

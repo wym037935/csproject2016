@@ -1,0 +1,7 @@
+[Inputs]
+ce
+[Outputs]
+[BiDir]
+[ATTRIBUTES]
+VeriModel inst_rom
+

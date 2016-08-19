@@ -1,0 +1,9 @@
+[Inputs]
+clk_sys
+rst_in
+[Outputs]
+rst
+[BiDir]
+[ATTRIBUTES]
+VeriModel RST_SYNC
+

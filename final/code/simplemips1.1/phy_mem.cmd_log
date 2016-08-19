@@ -1,0 +1,3 @@
+vhdtdtfi -lang verilog -prj simplemips1.1 -o D:/study/simplemips1.1/phy_mem.tfi -lib work D:/study/simplemips1.1//phy_mem.v -module phy_mem -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lib work D:/study/simplemips1.1/phy_mem.v -lang verilog -prj simplemips1.1 -o phy_mem.spl -module phy_mem -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 phy_mem.spl D:/study/simplemips1.1/phy_mem.sym 

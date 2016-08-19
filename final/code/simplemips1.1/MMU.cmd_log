@@ -1,0 +1,4 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/MMU.v -lang verilog -prj simplemips1.1 -o MMU.spl -module MMU -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 MMU.spl D:/study/simplemips1.1/MMU.sym 
+vhdtdtfi -lib work D:/study/simplemips1.1/MMU.v -lang verilog -prj simplemips1.1 -o MMU.spl -module MMU -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 MMU.spl D:/study/simplemips1.1/MMU.sym 

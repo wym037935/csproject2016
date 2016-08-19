@@ -1,0 +1,122 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Jul 24 15:02:25 2016
+# Process ID: 620
+# Log file: D:/study/simplemips1.1/planAhead_run_1/planAhead.log
+# Journal file: D:/study/simplemips1.1/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source D:/study/simplemips1.1/pa.fromHdl.tcl
+# create_project -name simplemips1.1 -dir "D:/study/simplemips1.1/planAhead_run_2" -part xc6slx100fgg676-2
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "simplemipst.ucf" [current_fileset -constrset]
+Adding file 'D:/study/simplemips1.1/simplemipst.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {serial_port.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {Reg.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {phy_mem.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {PC.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {MMU.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {MEM_WB.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {MEM.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IF_ID.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {IF.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ID_EX.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ID.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {EX_MEM.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {EX.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {CPU.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {simplemipst.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top simplemipst $srcset
+# add_files [list {simplemipst.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx100fgg676-2
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "D:/study/simplemips1.1/serial_port.v" into library work
+Parsing verilog file "header.v" included at line 9. [D:/study/simplemips1.1/serial_port.v:9]
+Analyzing Verilog file "D:/study/simplemips1.1/Reg.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/Reg.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/phy_mem.v" into library work
+Parsing verilog file "header.v" included at line 2. [D:/study/simplemips1.1/phy_mem.v:2]
+Parsing verilog file "bootloader.v" included at line 100. [D:/study/simplemips1.1/phy_mem.v:100]
+Parsing verilog file "memstrans.v" included at line 104. [D:/study/simplemips1.1/phy_mem.v:104]
+Analyzing Verilog file "D:/study/simplemips1.1/PC.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/PC.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/MMU.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/MMU.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/MEM_WB.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/MEM_WB.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/MEM.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/MEM.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/IF_ID.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/IF_ID.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/IF.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/IF.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/ID_EX.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/ID_EX.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/ID.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/ID.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/EX_MEM.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/EX_MEM.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/EX.v" into library work
+Parsing verilog file "header.v" included at line 1. [D:/study/simplemips1.1/EX.v:1]
+Analyzing Verilog file "D:/study/simplemips1.1/CPU.v" into library work
+Parsing verilog file "header.v" included at line 2. [D:/study/simplemips1.1/CPU.v:2]
+Analyzing Verilog file "D:/study/simplemips1.1/simplemipst.vf" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'clockpll' instantiated as 'instance_name' [D:/study/simplemips1.1/CPU.v:15]
+Resolution: File names need to match cell names: an EDIF definition will be found in clockpll.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'uart_async_transmitter(ClkFrequency=20000000,Baud=115200)' instantiated as 'utrans' [D:/study/simplemips1.1/serial_port.v:38]
+Resolution: File names need to match cell names: an EDIF definition will be found in uart_async_transmitter(ClkFrequency=20000000,Baud=115200).edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'uart_async_receiver(ClkFrequency=20000000,Baud=115200)' instantiated as 'urecv' [D:/study/simplemips1.1/serial_port.v:45]
+Resolution: File names need to match cell names: an EDIF definition will be found in uart_async_receiver(ClkFrequency=20000000,Baud=115200).edf; an HDL definition may be placed in any Verilog/VHDL file.
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx100/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx100/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx100/fgg676/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [D:/study/simplemips1.1/simplemipst.ucf]
+Finished Parsing UCF File [D:/study/simplemips1.1/simplemipst.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 15e71d59
+open_rtl_design: Time (s): elapsed = 00:00:08 . Memory (MB): peak = 725.207 ; gain = 258.867
+update_compile_order -fileset sim_1

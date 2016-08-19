@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="inst_rom">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2016-7-23T7:20:55</timestamp>
+    <attr value="inst_rom" name="VeriModel" />
+    <pin polarity="Input" x="0" y="-32" name="ce" />
+    <pin polarity="Output" x="368" y="0" name="inst(31:0)" />
+    <pin polarity="Input" x="0" y="32" name="addr(31:0)" />
+    <graph>
+        <rect width="256" x="64" y="-64" height="132" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-72" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin ce" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="68" y="32" type="pin addr(31:0)" />
+        <line x2="64" y1="32" y2="32" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="220" y="4" type="pin inst(31:0)" />
+        <line x2="320" y1="0" y2="0" x1="372" />
+    </graph>
+</symbol>

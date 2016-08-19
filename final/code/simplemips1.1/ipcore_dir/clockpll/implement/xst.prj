@@ -1,0 +1,2 @@
+verilog work ../../clockpll.v
+verilog work ../example_design/clockpll_exdes.v

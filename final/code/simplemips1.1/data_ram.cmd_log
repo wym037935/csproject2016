@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/study/simplemips1.1/data_ram.v -lang verilog -prj simplemips1.1 -o data_ram.spl -module data_ram -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 data_ram.spl D:/study/simplemips1.1/data_ram.sym 
